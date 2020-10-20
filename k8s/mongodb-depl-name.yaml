@@ -1,0 +1,30 @@
+#apiVersion: apps/v1
+#kind: Deployment
+#metadata:
+#  name: <DEPLOYMENT_NAME>
+#spec:
+#  replicas: 1
+#  selector:
+#    matchLabels:
+#      app: <APP_NAME>
+#  template:
+#    metadata:
+#      labels:
+#        app: <APP_NAME>
+#    spec:
+#      containers:
+#        - name: <APP_NAME>
+#          image: mongo
+#---
+#apiVersion: v1
+#kind: Service
+#metadata:
+#  name: <SERVICE_NAME>
+#spec:
+#  selector:
+#    app: <APP_NAME>
+#  ports:
+#    - name: db
+#      protocol: TCP
+#      port: 27017
+#      targetPort: 27017

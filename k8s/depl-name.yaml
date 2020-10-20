@@ -1,0 +1,46 @@
+#apiVersion: apps/v1
+#kind: Deployment
+#metadata:
+#  name: <DEPLOYMENT_NAME>
+#spec:
+#  replicas: 1
+#  selector:
+#    matchLabels:
+#      app: <APP_NAME>
+#  template:
+#    metadata:
+#      labels:
+#        app: <APP_NAME>
+#    spec:
+#      containers:
+#        - name: <APP_NAME>
+#          image: jedavard/<IMAGE_NAME>
+#          env:
+#            - name: MONGO_URI
+#              value: mongodb://order-mongo-srv/order
+#            - name: NATS_URL
+#              value: http://nats-srv:4222
+#            - name: NATS_CLUSTER_ID
+#              value: kubernetes-ticket-project
+#            - name: NATS_CLIENT_ID
+#              valueFrom:
+#                fieldRef:
+#                  fieldPath: metadata.name
+#            - name: JWT_SECRET
+#              valueFrom:
+#                secretKeyRef:
+#                  key: JWT_SECRET
+#                  name: jwt-secret
+#---
+#apiVersion: v1
+#kind: Service
+#metadata:
+#  name: <SERVICE_NAME>
+#spec:
+#  selector:
+#    app: <APP_NAME>
+#  ports:
+#    - name: <APP_NAME>
+#      protocol: TCP
+#      port: 3000
+#      targetPort: 3000
