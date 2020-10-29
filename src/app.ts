@@ -2,6 +2,8 @@ import express from 'express'
 import 'express-async-errors'
 import cookieSession from 'cookie-session'
 
+import { UserRouter } from './routes'
+
 // import { createTicketRouter } from './routes'
 
 const app = express()
@@ -16,16 +18,16 @@ app.use(
 )
 // app.use(currentUser)
 
-// app.use('/api/tickets', createTicketRouter)
+app.use('/api', UserRouter)
 
-app.get('/api/users/ping', (req, res) => {
+app.get('/api/ping', (req, res) => {
     res.status(200).send('Pong')
 })
 
 app.use('*', async () => {
-    throw new NotFoundError()
+    // throw new NotFoundError()
 })
 
-app.use(errorHandler)
+// app.use(errorHandler)
 
-export { app }
+export default app

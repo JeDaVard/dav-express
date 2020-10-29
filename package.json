@@ -1,8 +1,11 @@
 {
-  "name": "order",
+  "name": "dav-express-template",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "a fully packaged template for node/express/ts/jest",
+  "main": "index.ts",
+  "repository": {
+    "url": ""
+  },
   "scripts": {
     "start": "ts-node-dev --poll src/index.ts",
     "test:ci": "jest",
