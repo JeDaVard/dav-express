@@ -29,6 +29,11 @@ CMD ["npm", "start"]
 # official node guide
 # https://nodejs.org/en/docs/guides/nodejs-docker-webapp/
 
+
+# To use multistage feature, for the main image use this command
+# docker build -t <tagName> --target prod .
+# for the others
+# docker build -t <tagName>:<targetName> --target <targetName> .
 FROM prod as dev
 ENV NODE_ENV=development
 RUN npm install --only=development
