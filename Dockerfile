@@ -1,40 +1,32 @@
-FROM node:alpine as prod
+FROM node:alpine as base
 
 # The EXPOSE instruction does not actually publish the port. It's a documentation for other images or engineers
 EXPOSE 5000
 
-# For a proper node server shutdown, in case we don't have the app's source code to write a snipet
-# But I guess it is deprecated, as I notice a gracefull shutdown even without this, and index.js SIG.. listeners
+# tini is something to help to transfer linux signals to node, but I guess it comes even without tini
 # RUN apk add --no-cache tini
 
 WORKDIR /usr/src/app
-
 COPY package.json .
-#COPY package.json package-lock.json* ./
-
-#RUN npm install --only=prod
 RUN npm install --only=prod && npm cache clean --force
-
 COPY . .
-
-# also we can play around the linux current user, to have more secure enviroment
 
 #See the line 6
 #ENTRYPOINT ["/sbin/tini", "--"]
 #CMD ["node", "./bin/www"]
-
-# for the production use allways "node index" or "node ./bin/www", not npm start
-CMD ["npm", "start"]
-
-# official node guide
-# https://nodejs.org/en/docs/guides/nodejs-docker-webapp/
 
 
 # To use multistage feature, for the main image use this command
 # docker build -t <tagName> --target prod .
 # for the others
 # docker build -t <tagName>:<targetName> --target <targetName> .
-FROM prod as dev
+FROM base as prod
+ENV NODE_ENV=production
+# also we can play around the linux current user, to have more secure enviroment
+# for the production use allways "node index" or "node ./bin/www", not npm start
+CMD ["npm", "start"]
+
+FROM base as dev
 ENV NODE_ENV=development
 RUN npm install --only=development
 CMD ["npm", "start"]
@@ -46,3 +38,6 @@ CMD ["npm", "test"]
 FROM dev as ci
 ENV NODE_ENV=development
 CMD ["npm", "run" ,"test:ci"]
+
+# official node guide
+# https://nodejs.org/en/docs/guides/nodejs-docker-webapp/

@@ -6,6 +6,14 @@ import app from './app'
 
 const server = http.createServer(app)
 
+/*
+ * if you do logging middleware, and use docker,
+ * search for "node logging on docker" and "winston.transports.Console"
+ * https://github.com/winstonjs/winston/blob/master/docs/transports.md#console-transport
+ * The idea is make winston to record logs in docker logs, otherwise logs on node would be removed
+ * when you restart the container, and docker logs will always be empty
+ * */
+
 const port = 5000
 
 ;(async function () {
@@ -60,6 +68,8 @@ process.on('SIGTERM', function onSigterm() {
 function shutdown() {
     // I guess it is deprecated, because even if it's commented, I notice a graceful shutdown
     console.log(`[Node Process] Shutting down the server on port ${port} .. pid: ${process.pid}`)
+    waitForSocketsToClose(10)
+
     // NOTE: server.close is for express based apps
     // If using hapi, use `server.stop`
     server.close(function onServerClosed(err) {
@@ -69,4 +79,33 @@ function shutdown() {
         }
         process.exit()
     })
+}
+
+// For sockets
+let sockets = {} as any,
+    nextSocketId = 0
+
+server.on('connection', function (socket) {
+    const socketId = nextSocketId++
+    sockets[socketId] = socket
+
+    socket.once('close', function () {
+        delete sockets[socketId]
+    })
+})
+
+function waitForSocketsToClose(counter: number) {
+    if (counter > 0) {
+        console.log(
+            `Waiting ${counter} more ${
+                counter !== 1 ? 'seconds' : 'second'
+            } for all connections to close...`,
+        )
+        return setTimeout(waitForSocketsToClose, 1000, counter - 1)
+    }
+
+    console.log('Forcing all connections to close now')
+    for (let socketId in sockets) {
+        sockets[socketId].destroy()
+    }
 }
