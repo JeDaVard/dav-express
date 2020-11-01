@@ -56,12 +56,12 @@ function shutdown() {
 	console.log(`[Node Process] Shutting down the server on port ${port} ..`)
 	// NOTE: server.close is for express based apps
 	// If using hapi, use `server.stop`
-	// server.close(function onServerClosed (err) {
-	//     console.log(process.pid)
-	//     if (err) {
-	//         console.error(err);
-	//         process.exitCode = 1;
-	//     }
-	//     process.exit();
-	// })
+	server.close(function onServerClosed (err) {
+	    console.log(process.pid)
+	    if (err) {
+	        console.error(err);
+	        process.exitCode = 1;
+	    }
+	    process.exit();
+	})
 }

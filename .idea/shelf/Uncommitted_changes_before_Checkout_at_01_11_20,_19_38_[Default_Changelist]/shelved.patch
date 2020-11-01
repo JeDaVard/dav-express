@@ -1,0 +1,171 @@
+Index: src/index.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import dotenv from 'dotenv'\nimport mongoose from 'mongoose'\nimport http from 'http'\n\nimport app from './app'\n\nconst server = http.createServer(app)\n\n/*\n * if you do logging middleware, and use docker,\n * search for \"node logging on docker\" and \"winston.transports.Console\"\n * https://github.com/winstonjs/winston/blob/master/docs/transports.md#console-transport\n * The idea is make winston to record logs in docker logs, otherwise logs on node would be removed\n * when you restart the container, and docker logs will always be empty\n * */\n\nconst port = 5000\n\n;(async function () {\n    try {\n        // Connect to DB\n        // await mongoose.connect(process.env.MONGO_URI!, {\n        //     useNewUrlParser: true,\n        //     useCreateIndex: true,\n        //     useUnifiedTopology: true,\n        // })\n        // console.log('[Node Process] Ticket mongodb is connected...')\n    } catch (e) {\n        console.error(e)\n    }\n    // Run the server\n    server.listen(port, () => {\n        console.log('[Node Process] Ticket service is up on ' + port)\n    })\n})()\n\n// you need this code so node will watch for exit signals\n// node by default doesn't handle SIGINT/SIGTERM\n// docker containers use SIGINT and SIGTERM to properly exit\n//\n// signals also aren't handeled by npm:\n// https://github.com/npm/npm/issues/4603\n// https://github.com/npm/npm/pull/10868\n// https://github.com/RisingStack/kubernetes-graceful-shutdown-example/blob/master/src/index.js\n// if you want to use npm then start with `docker run --init` to help, but I still don't think it's\n// a graceful shutdown of node process, just a forced exit\n//\n\n// quit on ctrl-c when running docker in terminal\nprocess.on('SIGINT', function onSigint() {\n    console.info(\n        '[Node Process] Got SIGINT (aka ctrl-c in docker). Graceful shutdown ',\n        new Date().toISOString(),\n    )\n    shutdown()\n})\n\n// quit properly on docker stop\nprocess.on('SIGTERM', function onSigterm() {\n    console.info(\n        '[Node Process] Got SIGTERM (docker container stop). Graceful shutdown ',\n        new Date().toISOString(),\n    )\n    shutdown()\n})\n\n// shut down server\nfunction shutdown() {\n    // I guess it is deprecated, because even if it's commented, I notice a graceful shutdown\n    console.log(`[Node Process] Shutting down the server on port ${port} .. pid: ${process.pid}`)\n    waitForSocketsToClose(10)\n\n    // NOTE: server.close is for express based apps\n    // If using hapi, use `server.stop`\n    server.close(function onServerClosed(err) {\n        if (err) {\n            console.error(err)\n            process.exitCode = 1\n        }\n        process.exit()\n    })\n}\n\n// For sockets\nlet sockets = {} as any,\n    nextSocketId = 0\n\nserver.on('connection', function (socket) {\n    const socketId = nextSocketId++\n    sockets[socketId] = socket\n\n    socket.once('close', function () {\n        delete sockets[socketId]\n    })\n})\n\nfunction waitForSocketsToClose(counter: number) {\n    if (counter > 0) {\n        console.log(\n            `Waiting ${counter} more ${\n                counter !== 1 ? 'seconds' : 'second'\n            } for all connections to close...`,\n        )\n        return setTimeout(waitForSocketsToClose, 1000, counter - 1)\n    }\n\n    console.log('Forcing all connections to close now')\n    for (let socketId in sockets) {\n        sockets[socketId].destroy()\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/index.ts	(revision b41607a0423db5ee2ef806f1412bdba93383c66d)
++++ src/index.ts	(date 1604245099466)
+@@ -68,7 +68,7 @@
+ function shutdown() {
+     // I guess it is deprecated, because even if it's commented, I notice a graceful shutdown
+     console.log(`[Node Process] Shutting down the server on port ${port} .. pid: ${process.pid}`)
+-    waitForSocketsToClose(10)
++    // waitForSocketsToClose(10)
+ 
+     // NOTE: server.close is for express based apps
+     // If using hapi, use `server.stop`
+@@ -82,30 +82,30 @@
+ }
+ 
+ // For sockets
+-let sockets = {} as any,
+-    nextSocketId = 0
+-
+-server.on('connection', function (socket) {
+-    const socketId = nextSocketId++
+-    sockets[socketId] = socket
++// let sockets = {} as any,
++//     nextSocketId = 0
++//
++// server.on('connection', function (socket) {
++//     const socketId = nextSocketId++
++//     sockets[socketId] = socket
++//
++//     socket.once('close', function () {
++//         delete sockets[socketId]
++//     })
++// })
+ 
+-    socket.once('close', function () {
+-        delete sockets[socketId]
+-    })
+-})
+-
+-function waitForSocketsToClose(counter: number) {
+-    if (counter > 0) {
+-        console.log(
+-            `Waiting ${counter} more ${
+-                counter !== 1 ? 'seconds' : 'second'
+-            } for all connections to close...`,
+-        )
+-        return setTimeout(waitForSocketsToClose, 1000, counter - 1)
+-    }
+-
+-    console.log('Forcing all connections to close now')
+-    for (let socketId in sockets) {
+-        sockets[socketId].destroy()
+-    }
+-}
++// function waitForSocketsToClose(counter: number) {
++//     if (counter > 0) {
++//         console.log(
++//             `Waiting ${counter} more ${
++//                 counter !== 1 ? 'seconds' : 'second'
++//             } for all connections to close...`,
++//         )
++//         return setTimeout(waitForSocketsToClose, 1000, counter - 1)
++//     }
++//
++//     console.log('Forcing all connections to close now')
++//     for (let socketId in sockets) {
++//         sockets[socketId].destroy()
++//     }
++// }
+Index: Dockerfile
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>FROM node:alpine as base\n\n# The EXPOSE instruction does not actually publish the port. It's a documentation for other images or engineers\nEXPOSE 5000\n\n# tini is something to help to transfer linux signals to node, but I guess it comes even without tini\n# RUN apk add --no-cache tini\n\nWORKDIR /usr/src/app\nCOPY package.json .\nRUN npm install --only=prod && npm cache clean --force\nCOPY . .\n\n#See the line 6\n#ENTRYPOINT [\"/sbin/tini\", \"--\"]\n#CMD [\"node\", \"./bin/www\"]\n\n\n# To use multistage feature, for the main image use this command\n# docker build -t <tagName> --target prod .\n# for the others\n# docker build -t <tagName>:<targetName> --target <targetName> .\nFROM base as prod\nENV NODE_ENV=production\n# also we can play around the linux current user, to have more secure enviroment\n# for the production use allways \"node index\" or \"node ./bin/www\", not npm start\nCMD [\"npm\", \"start\"]\n\nFROM base as dev\nENV NODE_ENV=development\nRUN npm install --only=development\nCMD [\"npm\", \"start\"]\n\nFROM dev as test\nENV NODE_ENV=development\nCMD [\"npm\", \"test\"]\n\nFROM dev as ci\nENV NODE_ENV=development\nCMD [\"npm\", \"run\" ,\"test:ci\"]\n\n# official node guide\n# https://nodejs.org/en/docs/guides/nodejs-docker-webapp/
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Dockerfile	(revision b41607a0423db5ee2ef806f1412bdba93383c66d)
++++ Dockerfile	(date 1604244924478)
+@@ -14,7 +14,10 @@
+ #See the line 6
+ #ENTRYPOINT ["/sbin/tini", "--"]
+ #CMD ["node", "./bin/www"]
+-
++ENV NODE_ENV=production
++# also we can play around the linux current user, to have more secure enviroment
++# for the production use allways "node index" or "node ./bin/www", not npm start
++CMD ["npm", "start"]
+ 
+ # To use multistage feature, for the main image use this command
+ # docker build -t <tagName> --target prod .
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"BranchesTreeState\">\n    <expand>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"LOCAL_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n    </expand>\n    <select />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"d94c5589-3348-44f4-9dfb-50efa0a4eca3\" name=\"Default Changelist\" comment=\"\">\n      <change afterPath=\"$PROJECT_DIR$/README.md\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.dockerignore\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.dockerignore\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Dockerfile\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Dockerfile\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/docker-compose.yml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/docker-compose.yml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/package-lock.json\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/index.ts\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/index.ts\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"TypeScript File\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"KubernetesApiPersistence\">\n    <option name=\"context\" value=\"docker-desktop\" />\n    <option name=\"namespace\" value=\"default\" />\n  </component>\n  <component name=\"ProjectId\" id=\"1j6rUawbja3gpWQsWCS4HYAnAAK\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\n    <property name=\"javascript.nodejs.core.library.configured.version\" value=\"15.0.1\" />\n    <property name=\"javascript.nodejs.core.library.typings.version\" value=\"14.14.2\" />\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/.github/workflow\" />\n    <property name=\"nodejs_interpreter_path\" value=\"$USER_HOME$/.nvm/versions/node/v15.0.1/bin/node\" />\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\n    <property name=\"prettierjs.PrettierConfiguration.Package\" value=\"$PROJECT_DIR$/node_modules/prettier\" />\n    <property name=\"run.prettier.on.save\" value=\"true\" />\n    <property name=\"settings.editor.selected.configurable\" value=\"settings.javascript.prettier\" />\n    <property name=\"ts.external.directory.path\" value=\"$PROJECT_DIR$/node_modules/typescript/lib\" />\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\n  </component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/.github/workflow\" />\n      <recent name=\"$PROJECT_DIR$/src/middlewares\" />\n      <recent name=\"$PROJECT_DIR$/src/libs\" />\n      <recent name=\"$PROJECT_DIR$/k8s\" />\n      <recent name=\"$PROJECT_DIR$/src\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"Dockerfile\" type=\"docker-deploy\" factoryName=\"dockerfile\" temporary=\"true\" server-name=\"Docker\">\n      <deployment type=\"dockerfile\">\n        <settings>\n          <option name=\"sourceFilePath\" value=\"Dockerfile\" />\n        </settings>\n      </deployment>\n      <method v=\"2\" />\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Docker.Dockerfile\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"d94c5589-3348-44f4-9dfb-50efa0a4eca3\" name=\"Default Changelist\" comment=\"\" />\n      <created>1603135399207</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1603135399207</updated>\n      <workItem from=\"1603135400294\" duration=\"1106000\" />\n      <workItem from=\"1603138399400\" duration=\"1518000\" />\n      <workItem from=\"1603176969913\" duration=\"262000\" />\n      <workItem from=\"1603264243972\" duration=\"304000\" />\n      <workItem from=\"1603396866891\" duration=\"73000\" />\n      <workItem from=\"1604174096160\" duration=\"347000\" />\n      <workItem from=\"1604209631918\" duration=\"15412000\" />\n    </task>\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"WindowStateProjectService\">\n    <state x=\"528\" y=\"272\" key=\"#Usage_Scope\" timestamp=\"1603396929802\">\n      <screen x=\"0\" y=\"0\" width=\"1440\" height=\"900\" />\n    </state>\n    <state x=\"528\" y=\"272\" key=\"#Usage_Scope/0.0.1440.900@0.0.1440.900\" timestamp=\"1603396929802\" />\n    <state x=\"457\" y=\"247\" key=\"#com.intellij.fileTypes.FileTypeChooser\" timestamp=\"1604223989486\">\n      <screen x=\"0\" y=\"0\" width=\"1440\" height=\"900\" />\n    </state>\n    <state x=\"457\" y=\"247\" key=\"#com.intellij.fileTypes.FileTypeChooser/-1440.0.1440.900/0.0.1440.900@0.0.1440.900\" timestamp=\"1604223989486\" />\n    <state x=\"229\" y=\"86\" key=\"SettingsEditor\" timestamp=\"1604227811052\">\n      <screen x=\"0\" y=\"0\" width=\"1440\" height=\"900\" />\n    </state>\n    <state x=\"229\" y=\"86\" key=\"SettingsEditor/-1440.0.1440.900/0.0.1440.900@0.0.1440.900\" timestamp=\"1604227811052\" />\n    <state x=\"229\" y=\"86\" key=\"SettingsEditor/0.0.1440.900@0.0.1440.900\" timestamp=\"1603396932258\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision b41607a0423db5ee2ef806f1412bdba93383c66d)
++++ .idea/workspace.xml	(date 1604245099602)
+@@ -7,16 +7,18 @@
+         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+       </path>
+     </expand>
+-    <select />
++    <select>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="BRANCH:main" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++    </select>
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="d94c5589-3348-44f4-9dfb-50efa0a4eca3" name="Default Changelist" comment="">
+-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -33,6 +35,7 @@
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++    <option name="RESET_MODE" value="HARD" />
+   </component>
+   <component name="KubernetesApiPersistence">
+     <option name="context" value="docker-desktop" />
+@@ -96,6 +99,7 @@
+       <workItem from="1603396866891" duration="73000" />
+       <workItem from="1604174096160" duration="347000" />
+       <workItem from="1604209631918" duration="15412000" />
++      <workItem from="1604244708986" duration="391000" />
+     </task>
+     <servers />
+   </component>
+@@ -107,11 +111,24 @@
+       <map>
+         <entry key="MAIN">
+           <value>
+-            <State />
++            <State>
++              <option name="FILTERS">
++                <map>
++                  <entry key="branch">
++                    <value>
++                      <list>
++                        <option value="main" />
++                      </list>
++                    </value>
++                  </entry>
++                </map>
++              </option>
++            </State>
+           </value>
+         </entry>
+       </map>
+     </option>
++    <option name="oldMeFiltersMigrated" value="true" />
+   </component>
+   <component name="WindowStateProjectService">
+     <state x="528" y="272" key="#Usage_Scope" timestamp="1603396929802">
