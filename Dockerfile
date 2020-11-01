@@ -1,6 +1,6 @@
 FROM node:alpine as base
 
-# The EXPOSE instruction does not actually publish the port. It's a documentation for other images or engineers
+# The EXPOSE instruction does not actually publish the port. It's a documentation for other images, or engineers
 EXPOSE 5000
 
 # tini is something to help to transfer linux signals to node, but I guess it comes even without tini
@@ -8,7 +8,7 @@ EXPOSE 5000
 RUN apk add --no-cache tini
 
 WORKDIR /usr/src/app
-COPY package.json .
+COPY package*.json ./
 RUN npm install --only=prod && npm cache clean --force
 COPY . .
 #See the line 6
@@ -27,7 +27,7 @@ ENV NODE_ENV=production
 CMD ["npm", "start"]
 
 FROM base as dev
-#ENV NODE_ENV=development
+ENV NODE_ENV=development
 RUN npm install --only=development
 CMD ["npm", "run", "dev"]
 
