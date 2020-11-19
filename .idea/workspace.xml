@@ -17,12 +17,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d94c5589-3348-44f4-9dfb-50efa0a4eca3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/@types/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_11_20,_19_38_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_11_20,_19_39_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_11_20,_19_43_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_11_20__19_38__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_11_20__19_39__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_11_20__19_43__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,11 +63,11 @@
     <property name="javascript.nodejs.core.library.configured.version" value="15.0.1" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.14.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="nodejs_interpreter_path" value="$USER_HOME$/.nvm/versions/node/v15.0.1/bin/node" />
+    <property name="nodejs_interpreter_path" value="$USER_HOME$/.nvm/versions/node/v14.15.0/bin/node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="run.prettier.on.save" value="true" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -108,7 +111,9 @@
       <workItem from="1603396866891" duration="73000" />
       <workItem from="1604174096160" duration="347000" />
       <workItem from="1604209631918" duration="15412000" />
-      <workItem from="1604252262434" duration="717000" />
+      <workItem from="1604252262434" duration="1339000" />
+      <workItem from="1605071407573" duration="219000" />
+      <workItem from="1605882981503" duration="688000" />
     </task>
     <servers />
   </component>
@@ -154,10 +159,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="457" y="247" key="#com.intellij.fileTypes.FileTypeChooser/-1440.0.1440.900/0.0.1440.900@0.0.1440.900" timestamp="1604223989486" />
-    <state x="229" y="86" key="SettingsEditor" timestamp="1604227811052">
+    <state x="229" y="86" key="SettingsEditor" timestamp="1605071435230">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="229" y="86" key="SettingsEditor/-1440.0.1440.900/0.0.1440.900@0.0.1440.900" timestamp="1604227811052" />
-    <state x="229" y="86" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1603396932258" />
+    <state x="229" y="86" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1605071435230" />
   </component>
 </project>
