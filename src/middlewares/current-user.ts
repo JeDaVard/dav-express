@@ -8,18 +8,6 @@ export interface UserPayload {
     updatedAt: string
 }
 
-declare global {
-    namespace Express {
-        interface Request {
-            user?: UserPayload
-        }
-    }
-}
-// Or you can do this way
-// export interface ExtendedRequest extends Request {
-//     [key: string]: any
-// }
-
 export const currentUser = (req: Request, res: Response, next: NextFunction) => {
     if (!req.session?.jwt) return next()
 

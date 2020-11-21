@@ -1,43 +1,36 @@
-FROM node:alpine as base
+FROM node:14.15.1-alpine3.12
 
-# The EXPOSE instruction does not actually publish the port. It's a documentation for other images, or engineers
-EXPOSE 5000
-
-# tini is something to help to transfer linux signals to node, but I guess it comes even without tini
-# After 5 hours, suddenly I got freezed the terminal when ctrlC, and an SIGINT err run with -it
+# Get tini to allow linux send signals to node runtime (*1)
 RUN apk add --no-cache tini
 
+# The optimal place to keep your project
 WORKDIR /usr/src/app
-COPY package*.json ./
-RUN npm install --only=prod && npm cache clean --force
-COPY . .
-#See the line 6
+
+# Enviroment variables for your runtime
+ENV PATH ./node_modules/.bin:$PATH
+ENV NODE_PATH ./
+ENV NODE_ENV=production
+
+# Copy your project to workdir, later your can also copy the lockfile and use the new "npm ci" command
+COPY package*.json dist ./
+COPY src/bin bin
+
+# Install your production dependencies and clean the npm cache
+RUN npm install --only=production && npm cache clean --force
+
+# (*1)
 ENTRYPOINT ["/sbin/tini", "--"]
 
+# also we can play around the linux current user, to have a more secure machine
+RUN addgroup -S node_user && adduser -S -g node_user node_user && chown -R node_user:node_user .
+USER node_user
 
-# To use multistage feature, for the main image use this command
-# docker build -t <tagName> --target prod .
-# for the others
-# docker build -t <tagName>:<targetName> --target <targetName> .
-FROM base as prod
-ENV NODE_ENV=production
-# also we can play around the linux current user, to have more secure enviroment
-# for the production use allways "node index" or "node ./bin/www", not npm start
-#CMD ["node", "./bin/www"]
-CMD ["npm", "start"]
+EXPOSE 5000
 
-FROM base as dev
-ENV NODE_ENV=development
-RUN npm install --only=development
-CMD ["npm", "run", "dev"]
+CMD ["node", "./bin/www"]
 
-FROM dev as test
-ENV NODE_ENV=development
-CMD ["npm", "test"]
 
-FROM dev as ci
-ENV NODE_ENV=development
-CMD ["npm", "run" ,"test:ci"]
+# *1 in reality things are a bit complicated, read more about what actially do tini https://github.com/krallin/tini
 
 # official node guide
 # https://nodejs.org/en/docs/guides/nodejs-docker-webapp/
