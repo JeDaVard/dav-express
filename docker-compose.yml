@@ -1,15 +1,15 @@
-version: "2.4"
+version: '2.4'
 
 services:
-  node:
-    build:
-      dockerfile: Dockerfile.development
-      context: .
-    volumes:
-      - /usr/src/app/node_modules
-      - .:/usr/src/app
-    environment:
-          - NODE_ENV=development
-    ports:
-      - "5000:5000"
-      - "9229:9229"
+    node:
+        build:
+            dockerfile: Dockerfile.development
+            context: .
+        volumes:
+            - /usr/src/app/node_modules
+            - .:/usr/src/app
+        environment:
+            - NODE_ENV=development
+        ports:
+            - '5000:5000'
+            - '9229:9229'

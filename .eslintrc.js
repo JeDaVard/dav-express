@@ -4,7 +4,6 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     plugins: ['@typescript-eslint', 'security', 'prettier', 'import'],
     extends: [
-        'airbnb',
         'plugin:import/errors',
         'plugin:json/recommended',
         'plugin:security/recommended',
@@ -12,7 +11,8 @@ module.exports = {
         'prettier/@typescript-eslint',
     ],
     parserOptions: {
-        ecmaVersion: 2020,
+        project: ['./tsconfig.json'],
+        ecmaVersion: 2018,
         ecmaFeatures: {
             impliedStrict: true,
         },

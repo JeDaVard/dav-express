@@ -11,7 +11,12 @@
         "start": "npm run build && NODE_PATH=./dist node ./src/bin/www",
         "dev": "NODE_ENV=development NODE_PATH=./src ts-node-dev --poll --inspect -- ./src/bin/www",
         "test:ci": "jest",
-        "test": "jest --watch --no-cache"
+        "test": "jest --watch --no-cache",
+        "prettier": "prettier 'src' --write --ignore-unknown",
+        "lint:ts": "eslint 'src/**/*.ts'",
+        "lint:js": "eslint 'src/**/*.{js,json}'",
+        "lint:dotenv": "dotenv-linter --warn",
+        "lint": "npm run lint:ts"
     },
     "jest": {
         "preset": "ts-jest",
@@ -41,16 +46,15 @@
         "mongoose-update-if-current": "^1.4.0",
         "ts-node": "^9.0.0",
         "ts-node-dev": "^1.0.0",
-        "typescript": "^4.1.2"
+        "typescript": "^4.0.5"
     },
     "devDependencies": {
         "@types/jest": "^26.0.15",
         "@types/joi": "^14.3.4",
         "@types/supertest": "^2.0.10",
-        "@typescript-eslint/eslint-plugin": "^3.5.0",
-        "@typescript-eslint/parser": "^3.5.0",
+        "@typescript-eslint/eslint-plugin": "^4.8.1",
+        "@typescript-eslint/parser": "^4.8.1",
         "eslint": "^7.3.1",
-        "eslint-config-airbnb": "^18.2.1",
         "eslint-config-prettier": "^6.11.0",
         "eslint-plugin-import": "^2.22.0",
         "eslint-plugin-json": "^2.1.1",
@@ -71,7 +75,12 @@
     },
     "lint-staged": {
         "*.js": "eslint --cache --fix",
-        "*.ts": [ "eslint --fix", "git add" ],
-        ".env*": [ "npm run lint:dotenv" ]
+        "*.ts": [
+            "eslint --fix",
+            "git add"
+        ],
+        ".env*": [
+            "npm run lint:dotenv"
+        ]
     }
 }
