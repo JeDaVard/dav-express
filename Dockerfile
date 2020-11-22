@@ -30,7 +30,7 @@ EXPOSE 5000
 CMD ["node", "./bin/www"]
 
 
-# *1 in reality things are a bit complicated, read more about what actially do tini https://github.com/krallin/tini
+# *1 - in reality the things are a bit complicated, read more about what tini actially do  https://github.com/krallin/tini
 
 # official node guide
 # https://nodejs.org/en/docs/guides/nodejs-docker-webapp/
