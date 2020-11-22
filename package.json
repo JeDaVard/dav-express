@@ -15,11 +15,7 @@
         "prettier": "prettier 'src' --write --ignore-unknown",
         "lint:ts": "eslint 'src/**/*.{ts,json}'",
         "lint:js": "eslint 'src/**/*.{js}'",
-        "lint": "npm run lint:ts",
-        "test:unit": "jest \\.spec\\.ts?$",
-        "test:comp": "jest \\.test\\.ts?$",
-        "test:watch": "jest --watch --notify",
-        "test:cover": "node ./tools/test-cover.js"
+        "lint": "npm run lint:ts"
     },
     "jest": {
         "preset": "ts-jest",

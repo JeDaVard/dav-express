@@ -1,5 +1,6 @@
 describe('User api tests', () => {
-    console.log(global.signUpAndCookie());
+    const a = global.signUpAndCookie();
+    console.log(a);
     it('tests nothing', async () => {
         return true;
     });
