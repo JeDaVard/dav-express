@@ -17,49 +17,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d94c5589-3348-44f4-9dfb-50efa0a4eca3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/coverage-total-reporter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/test-cover.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/@types/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/@types/index.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/libs/errors/bad-request-error.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/errors/bad-request-error.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/libs/errors/bad-request-error.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/errors/bad-request-error.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/libs/errors/database-connection-error.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/errors/database-connection-error.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/libs/errors/database-connection-error.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/errors/database-connection-error.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/libs/errors/error-interfaces.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/errors/error-interfaces.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/libs/errors/error-interfaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/errors/error-interfaces.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/libs/errors/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/errors/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/libs/errors/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/errors/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/libs/errors/not-authorized-error.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/errors/not-authorized-error.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/libs/errors/not-authorized-error.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/errors/not-authorized-error.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/libs/errors/not-found-error.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/errors/not-found-error.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/libs/errors/not-found-error.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/errors/not-found-error.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/libs/errors/request-validation-error.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/errors/request-validation-error.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/libs/errors/request-validation-error.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/errors/request-validation-error.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middlewares/current-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/current-user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middlewares/current-user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/current-user.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middlewares/error-handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/error-handler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middlewares/error-handler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/error-handler.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middlewares/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middlewares/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middlewares/require-auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/require-auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middlewares/require-auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/require-auth.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middlewares/validate-request.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/validate-request.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middlewares/validate-request.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/validate-request.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/__test__/user.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/__test__/user.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/errors/bad-request-error.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/errors/database-connection-error.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/errors/error-interfaces.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/errors/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/errors/not-authorized-error.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/errors/not-found-error.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/errors/request-validation-error.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middlewares/current-user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middlewares/error-handler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middlewares/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middlewares/require-auth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middlewares/validate-request.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/__test__/user.test.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/__test__/user.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/__test__/user.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/user.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/setup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/setup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/setup.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/setup.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/setup.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,14 +78,14 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="15.0.1" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.14.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/routes/__test__" />
     <property name="nodejs_interpreter_path" value="$USER_HOME$/.nvm/versions/node/v14.15.0/bin/node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettier.import.notification.dismissed" value="true" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="run.prettier.on.save" value="true" />
     <property name="settings.editor.selected.configurable" value="settings.nodejs" />
-    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -112,11 +93,11 @@
       <recent name="$PROJECT_DIR$/src/test" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/test" />
+      <recent name="$PROJECT_DIR$/src/routes/__test__" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/test" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/.github/workflow" />
-      <recent name="$PROJECT_DIR$/src/middlewares" />
     </key>
   </component>
   <component name="RunManager">
@@ -156,7 +137,9 @@
       <workItem from="1605936838729" duration="5009000" />
       <workItem from="1605946839202" duration="8140000" />
       <workItem from="1605956804124" duration="2279000" />
-      <workItem from="1606039052261" duration="13478000" />
+      <workItem from="1606039052261" duration="16298000" />
+      <workItem from="1606077891831" duration="1132000" />
+      <workItem from="1606079045932" duration="406000" />
     </task>
     <servers />
   </component>
@@ -164,26 +147,24 @@
     <option name="version" value="3" />
     <option name="exactExcludedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/app.js" />
-        <option value="$PROJECT_DIR$/src/test/setup.js" />
-        <option value="$PROJECT_DIR$/src/models/index.js" />
-        <option value="$PROJECT_DIR$/src/routes/user.js" />
-        <option value="$PROJECT_DIR$/src/routes/index.js" />
-        <option value="$PROJECT_DIR$/src/services/index.js" />
-        <option value="$PROJECT_DIR$/src/controllers/index.js" />
-        <option value="$PROJECT_DIR$/src/middlewares/require-auth.js" />
-        <option value="$PROJECT_DIR$/src/middlewares/index.js" />
-        <option value="$PROJECT_DIR$/src/middlewares/current-user.js" />
-        <option value="$PROJECT_DIR$/src/middlewares/validate-request.js" />
-        <option value="$PROJECT_DIR$/src/middlewares/error-handler.js" />
-        <option value="$PROJECT_DIR$/src/libs/errors/request-validation-error.js" />
-        <option value="$PROJECT_DIR$/src/libs/errors/not-found-error.js" />
-        <option value="$PROJECT_DIR$/src/libs/errors/error-interfaces.js" />
-        <option value="$PROJECT_DIR$/src/libs/errors/not-authorized-error.js" />
-        <option value="$PROJECT_DIR$/src/libs/errors/index.js" />
         <option value="$PROJECT_DIR$/src/libs/errors/bad-request-error.js" />
+        <option value="$PROJECT_DIR$/src/libs/errors/not-authorized-error.js" />
+        <option value="$PROJECT_DIR$/src/libs/errors/not-found-error.js" />
+        <option value="$PROJECT_DIR$/src/middlewares/index.js" />
+        <option value="$PROJECT_DIR$/src/models/index.js" />
+        <option value="$PROJECT_DIR$/src/services/index.js" />
+        <option value="$PROJECT_DIR$/src/middlewares/error-handler.js" />
+        <option value="$PROJECT_DIR$/src/middlewares/require-auth.js" />
+        <option value="$PROJECT_DIR$/src/routes/user.js" />
+        <option value="$PROJECT_DIR$/src/libs/errors/error-interfaces.js" />
+        <option value="$PROJECT_DIR$/src/routes/index.js" />
         <option value="$PROJECT_DIR$/src/libs/errors/database-connection-error.js" />
+        <option value="$PROJECT_DIR$/src/test/setup.js" />
+        <option value="$PROJECT_DIR$/src/libs/errors/index.js" />
+        <option value="$PROJECT_DIR$/src/middlewares/current-user.js" />
         <option value="$PROJECT_DIR$/src/routes/__test__/user.test.js" />
+        <option value="$PROJECT_DIR$/src/libs/errors/request-validation-error.js" />
+        <option value="$PROJECT_DIR$/src/middlewares/validate-request.js" />
       </list>
     </option>
   </component>

@@ -13,10 +13,13 @@
         "test:ci": "jest",
         "test": "jest --watch --no-cache",
         "prettier": "prettier 'src' --write --ignore-unknown",
-        "lint:ts": "eslint 'src/**/*.ts'",
-        "lint:js": "eslint 'src/**/*.{js,json}'",
-        "lint:dotenv": "dotenv-linter --warn",
-        "lint": "npm run lint:ts"
+        "lint:ts": "eslint 'src/**/*.{ts,json}'",
+        "lint:js": "eslint 'src/**/*.{js}'",
+        "lint": "npm run lint:ts",
+        "test:unit": "jest \\.spec\\.ts?$",
+        "test:comp": "jest \\.test\\.ts?$",
+        "test:watch": "jest --watch --notify",
+        "test:cover": "node ./tools/test-cover.js"
     },
     "jest": {
         "preset": "ts-jest",
