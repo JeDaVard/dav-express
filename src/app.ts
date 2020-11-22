@@ -4,7 +4,7 @@ import cookieSession from 'cookie-session';
 
 import { UserRouter } from './routes';
 
-import { createTicketRouter } from './routes';
+// import { createTicketRouter } from './routes'
 
 const app = express();
 
