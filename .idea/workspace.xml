@@ -29,99 +29,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d94c5589-3348-44f4-9dfb-50efa0a4eca3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/db/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/health/index.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/health/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/api/index.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/api/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/index.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/headers.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tsconfig.eslint.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/base.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/block-navigation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/controllers/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/controllers/index.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/controllers/user.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/.eslintrc.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/@types/index.d.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/@types/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/coverage/lcov-report/block-navigation.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/coverage/lcov-report/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/coverage/lcov-report/prettify.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/coverage/lcov-report/sorter.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/src/app.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/src/controllers/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/src/controllers/index.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/src/controllers/user.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/src/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/src/libs/errors/bad-request-error.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/src/libs/errors/database-connection-error.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/src/libs/errors/error-interfaces.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/src/libs/errors/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/src/libs/errors/index.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/src/libs/errors/not-authorized-error.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/src/libs/errors/not-found-error.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/src/libs/errors/request-validation-error.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/src/libs/passwords/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/src/libs/passwords/index.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/src/middlewares/current-user.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/src/middlewares/error-handler.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/src/middlewares/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/src/middlewares/index.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/src/middlewares/require-auth.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/src/middlewares/validate-request.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/src/models/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/src/models/user.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/src/utils/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/src/utils/index.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/src/utils/response.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/tools/coverage-total-reporter.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/tools/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/dav-express/tools/test-cover.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/libs/errors/bad-request-error.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/libs/errors/database-connection-error.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/libs/errors/error-interfaces.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/libs/errors/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/libs/errors/index.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/libs/errors/not-authorized-error.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/libs/errors/not-found-error.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/libs/errors/request-validation-error.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/libs/passwords/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/libs/passwords/index.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/middlewares/current-user.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/middlewares/error-handler.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/middlewares/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/middlewares/index.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/middlewares/require-auth.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/middlewares/validate-request.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/models/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/models/user.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/prettify.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/prettify.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/sort-arrow-sprite.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/sorter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/test/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/test/setup.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/utils/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/utils/index.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/utils/response.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bin/www" beforeDir="false" afterPath="$PROJECT_DIR$/src/bin/www" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/user.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middlewares/current-user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/current-user.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/__test__/user.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/api/users/__test__/users.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/api/users/users.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/setup.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/setup.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -226,7 +136,7 @@
       <workItem from="1606080845840" duration="1068000" />
       <workItem from="1606117725817" duration="3990000" />
       <workItem from="1606121872711" duration="9799000" />
-      <workItem from="1606134664481" duration="17823000" />
+      <workItem from="1606134664481" duration="17879000" />
     </task>
     <servers />
   </component>

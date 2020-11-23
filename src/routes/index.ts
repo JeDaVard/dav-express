@@ -6,6 +6,7 @@ import { router as apis } from './api';
 const router = Router();
 
 router.use(currentUser);
+
 router.use(`/${process.env.BASE_API_URL}`, apis);
 
 router.use('*', async () => {
