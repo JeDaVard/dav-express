@@ -7,7 +7,7 @@ export const errorHandler = (err: Error, req: Request, res: Response, next: Next
         response(res, err.code, false, null, 'Failed', err.serialize());
         return;
     }
-    console.error('[ERROR] Unexpected error from errorHandler');
+    // console.info('[ERROR] Unexpected error from errorHandler');
     response(res, 500, false, null, 'Internal Server Error', [
         { message: 'Something went wrong!' },
     ]);

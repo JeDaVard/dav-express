@@ -1,11 +1,16 @@
 import { Response } from 'express';
 
+type Error = {
+    message: string;
+    field?: string;
+};
+
 function jsonResponse<T>(
     res: Response,
     code: number,
     success: boolean = false,
     message: string,
-    errors: [] = [],
+    errors: Error[] = [],
     data?: T | null,
 ) {
     res.type('application/json');
@@ -16,7 +21,7 @@ function successRes<T>(res: Response, code = 200, message = 'ok', data?: T | nul
     return jsonResponse<T>(res, code, true, message, [], data);
 }
 
-function failRes(res: Response, code = 500, message?: string, errors: [] = []) {
+function failRes(res: Response, code = 500, message?: string, errors: Error[] = []) {
     return jsonResponse(res, code, false, message || 'Bad Request', errors, null);
 }
 
@@ -31,7 +36,7 @@ export function response<T = null>(
     success: boolean = false,
     data?: T | null,
     message?: string,
-    errors?: [],
+    errors?: Error[],
 ) {
     switch (code) {
         case 200: {

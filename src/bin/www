@@ -1,5 +1,4 @@
 require('dotenv').config()
-console.log(process.env.BASE_API_URL);
 const mongoose = require('mongoose');
 const http = require('http');
 
