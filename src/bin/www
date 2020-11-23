@@ -1,5 +1,5 @@
 // import dotenv from 'dotenv'
-// import mongoose from 'mongoose'
+const mongoose = require('mongoose');
 const http = require('http');
 
 const { app } = require('app');
@@ -19,12 +19,12 @@ const port = 5000;
 (async function () {
 	try {
 		// Connect to DB
-		// await mongoose.connect(process.env.MONGO_URI!, {
-		//     useNewUrlParser: true,
-		//     useCreateIndex: true,
-		//     useUnifiedTopology: true,
-		// })
-		// console.log('[Node Process] Ticket mongodb is connected...')
+		await mongoose.connect('mongodb+srv://davit:vardanyan@cluster0.zd3fq.mongodb.net/dav-express?retryWrites=true&w=majority', {
+		    useNewUrlParser: true,
+		    useCreateIndex: true,
+		    useUnifiedTopology: true,
+		})
+		console.log('[Node Process] Ticket mongodb is connected...')
 	} catch (e) {
 		console.error(e);
 	}

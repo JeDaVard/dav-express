@@ -9,32 +9,23 @@
         "clean": "rm -rf ./dist && mkdir dist",
         "build": "npm run clean && tsc",
         "start": "npm run build && NODE_PATH=./dist node ./src/bin/www",
-        "dev": "NODE_ENV=development NODE_PATH=./src ts-node-dev --poll --inspect -- ./src/bin/www",
+        "dev": "NODE_ENV=development NODE_PATH=./src ts-node-dev --poll --files --inspect -- ./src/bin/www",
+        "dev2": "NODE_PATH=./src ts-node ./src/bin/www",
         "test:ci": "jest",
         "test": "jest --watch --no-cache",
         "prettier": "prettier 'src' --write --ignore-unknown",
         "lint:ts": "eslint 'src/**/*.{ts,json}'",
         "lint:js": "eslint 'src/**/*.{js}'",
-        "lint": "npm run lint:ts"
-    },
-    "jest": {
-        "preset": "ts-jest",
-        "testEnvironment": "node",
-        "setupFilesAfterEnv": [
-            "./src/test/setup.ts"
-        ]
+        "lint": "npm run lint:ts",
+        "test:unit": "jest \\.spec\\.ts?$",
+        "test:comp": "jest \\.test\\.ts?$",
+        "test:watch": "jest --watch --notify",
+        "test:cover": "node ./tools/test-cover.js"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "@types/cookie-session": "^2.0.41",
-        "@types/dotenv": "^8.2.0",
-        "@types/express": "^4.17.9",
-        "@types/express-session": "^1.15.15",
-        "@types/jsonwebtoken": "^8.5.0",
-        "@types/mongoose": "^5.10.1",
-        "@types/node": "^14.14.9",
         "cookie-session": "^1.4.0",
         "dotenv": "^8.2.0",
         "express": "^4.17.1",
@@ -48,8 +39,15 @@
         "typescript": "^4.0.5"
     },
     "devDependencies": {
+        "@types/cookie-session": "^2.0.41",
+        "@types/dotenv": "^8.2.0",
+        "@types/express": "^4.17.9",
+        "@types/express-session": "^1.17.3",
         "@types/jest": "^26.0.15",
         "@types/joi": "^14.3.4",
+        "@types/jsonwebtoken": "^8.5.0",
+        "@types/mongoose": "^5.10.1",
+        "@types/node": "^14.14.9",
         "@types/supertest": "^2.0.10",
         "@typescript-eslint/eslint-plugin": "^4.8.1",
         "@typescript-eslint/parser": "^4.8.1",
@@ -69,7 +67,8 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "lint-staged"
+            "pre-commit": "lint-staged",
+            "pre-push": "npm run test:ci"
         }
     },
     "lint-staged": {

@@ -1,0 +1,52 @@
+import { Request, Response } from 'express';
+import { User } from 'models/user';
+import { BadRequestError, DatabaseConnectionError } from 'libs/errors';
+import { Password } from 'libs/passwords';
+import jwt from 'jsonwebtoken';
+
+export const currentUser = async (req: Request, res: Response) => {
+    const { user } = req;
+    res.status(200).json({ success: true, user });
+};
+
+export const signIn = async (req: Request, res: Response) => {
+    const { email, password } = req.body;
+
+    const existingUser = await User.findOne({ email });
+    if (!existingUser) throw new BadRequestError("User doesn't exist");
+
+    const passwordsMatch = await Password.compare(existingUser.password, password);
+    if (!passwordsMatch) throw new BadRequestError('Invalid password');
+
+    const token = jwt.sign(
+        { id: existingUser.id, email: existingUser.email },
+        'process.env.JWT_SECRET!',
+        {},
+    );
+
+    req.session = { jwt: token };
+
+    res.status(200).send(existingUser);
+};
+
+export const signUp = async (req: Request, res: Response) => {
+    const { email, password } = req.body;
+
+    const existingUser = await User.findOne({ email });
+
+    if (existingUser) throw new DatabaseConnectionError('User exists!', 400);
+
+    const user = User.build({ email, password });
+    await user.save();
+
+    const token = jwt.sign({ id: user.id, email: user.email }, 'process.env.JWT_SECRET!', {});
+
+    req.session = { jwt: token };
+
+    res.status(201).send(user);
+};
+
+export const signOut = async (req: Request, res: Response) => {
+    req.session = null;
+    res.status(200).send({ currentUser: null });
+};

@@ -12,7 +12,7 @@ export const currentUser = (req: Request, res: Response, next: NextFunction) => 
     if (!req.session?.jwt) return next();
 
     try {
-        req.user = jwt.verify(req.session.jwt, process.env.JWT_SECRET!) as UserPayload;
+        req.user = jwt.verify(req.session.jwt, 'process.env.JWT_SECRET!') as UserPayload;
     } catch (e) {}
     next();
 };
