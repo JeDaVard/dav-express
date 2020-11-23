@@ -29,41 +29,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d94c5589-3348-44f4-9dfb-50efa0a4eca3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/utils/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/response.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/clover.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/coverage-final.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/base.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/block-navigation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/libs/errors/bad-request-error.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/libs/errors/database-connection-error.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/libs/errors/error-interfaces.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/libs/errors/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/libs/errors/index.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/libs/errors/not-authorized-error.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/libs/errors/not-found-error.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/libs/errors/request-validation-error.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/middlewares/error-handler.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/middlewares/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/middlewares/index.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/middlewares/require-auth.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/middlewares/validate-request.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/prettify.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/prettify.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/sort-arrow-sprite.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/sorter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/test/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/test/setup.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/user.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middlewares/error-handler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/error-handler.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/__test__/user.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/__test__/user.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/user.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/setup.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/setup.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +133,7 @@
       <workItem from="1606080845840" duration="1068000" />
       <workItem from="1606117725817" duration="3990000" />
       <workItem from="1606121872711" duration="9799000" />
-      <workItem from="1606134664481" duration="8453000" />
+      <workItem from="1606134664481" duration="9066000" />
     </task>
     <servers />
   </component>
