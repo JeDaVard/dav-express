@@ -64,15 +64,5 @@
         "prettier": "^2.2.0",
         "supertest": "^5.0.0",
         "ts-jest": "^26.4.4"
-    },
-    "lint-staged": {
-        "*.js": "eslint --cache --fix",
-        "*.ts": [
-            "eslint --fix",
-            "git add"
-        ],
-        ".env*": [
-            "npm run lint:dotenv"
-        ]
     }
 }
