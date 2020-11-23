@@ -3,10 +3,11 @@ import { User } from 'models/user';
 import { BadRequestError, DatabaseConnectionError } from 'libs/errors';
 import { Password } from 'libs/passwords';
 import jwt from 'jsonwebtoken';
+import { response } from 'utils';
 
 export const currentUser = async (req: Request, res: Response) => {
     const { user } = req;
-    res.status(200).json({ success: true, user });
+    response(res, 200, true, { currentUser: user || null });
 };
 
 export const signIn = async (req: Request, res: Response) => {
@@ -26,7 +27,7 @@ export const signIn = async (req: Request, res: Response) => {
 
     req.session = { jwt: token };
 
-    res.status(200).send(existingUser);
+    response(res, 200, true, { currentUser: existingUser });
 };
 
 export const signUp = async (req: Request, res: Response) => {
@@ -43,10 +44,10 @@ export const signUp = async (req: Request, res: Response) => {
 
     req.session = { jwt: token };
 
-    res.status(201).send(user);
+    response(res, 201, true, { currentUser: user });
 };
 
 export const signOut = async (req: Request, res: Response) => {
     req.session = null;
-    res.status(200).send({ currentUser: null });
+    response(res, 200, true, { currentUser: null });
 };

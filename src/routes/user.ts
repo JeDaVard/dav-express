@@ -11,7 +11,7 @@ router.post(
     '/sign-in',
     [
         body('email').isEmail().withMessage('Email must be valid'),
-        body('password').trim().notEmpty().withMessage('Email must be valid'),
+        body('password').trim().notEmpty().withMessage('Password must be provided'),
     ],
     validateRequest,
     userController.signIn,

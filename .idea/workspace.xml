@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
     <select>
@@ -17,22 +29,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d94c5589-3348-44f4-9dfb-50efa0a4eca3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/jest.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/user.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/libs/passwords/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/user.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/coverage-total-reporter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/test-cover.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/response.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/@types/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/@types/index.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bin/www" beforeDir="false" afterPath="$PROJECT_DIR$/src/bin/www" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middlewares/current-user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/current-user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/clover.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/coverage-final.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/base.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/block-navigation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/libs/errors/bad-request-error.ts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/libs/errors/database-connection-error.ts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/libs/errors/error-interfaces.ts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/libs/errors/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/libs/errors/index.ts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/libs/errors/not-authorized-error.ts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/libs/errors/not-found-error.ts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/libs/errors/request-validation-error.ts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/middlewares/error-handler.ts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/middlewares/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/middlewares/index.ts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/middlewares/require-auth.ts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/middlewares/validate-request.ts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/prettify.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/prettify.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/sort-arrow-sprite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/sorter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/test/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/test/setup.ts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middlewares/error-handler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/error-handler.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/__test__/user.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/__test__/user.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/setup.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/setup.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +100,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="15.0.1" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.14.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/models" />
     <property name="nodejs_interpreter_path" value="$USER_HOME$/.nvm/versions/node/v14.15.0/bin/node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettier.import.notification.dismissed" value="true" />
@@ -81,14 +112,15 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/utils" />
       <recent name="$PROJECT_DIR$/src/test" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/models" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/libs" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/test" />
-      <recent name="$PROJECT_DIR$/.github/workflow" />
     </key>
   </component>
   <component name="RunManager">
@@ -133,7 +165,7 @@
       <workItem from="1606080845840" duration="1068000" />
       <workItem from="1606117725817" duration="3990000" />
       <workItem from="1606121872711" duration="9799000" />
-      <workItem from="1606134664481" duration="2626000" />
+      <workItem from="1606134664481" duration="8453000" />
     </task>
     <servers />
   </component>
@@ -238,9 +270,13 @@
     </state>
     <state x="229" y="86" key="SettingsEditor/-1440.0.1440.900/0.0.1440.900@0.0.1440.900" timestamp="1604227811052" />
     <state x="229" y="86" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1605071435230" />
-    <state x="422" y="189" width="595" height="522" key="find.popup" timestamp="1606131275903">
+    <state x="422" y="189" width="595" height="580" key="find.popup" timestamp="1606140807623">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="422" y="189" width="595" height="522" key="find.popup/-1440.0.1440.900/0.0.1440.900@0.0.1440.900" timestamp="1606131275903" />
+    <state x="422" y="189" width="595" height="580" key="find.popup/-1440.0.1440.900/0.0.1440.900@0.0.1440.900" timestamp="1606140807623" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1606146792862">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/-1440.0.1440.900/0.0.1440.900@0.0.1440.900" timestamp="1606146792862" />
   </component>
 </project>

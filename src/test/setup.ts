@@ -9,7 +9,10 @@ import jwt from 'jsonwebtoken';
 declare global {
     namespace NodeJS {
         interface Global {
-            signUpAndCookie(): { id: string; cookies: string[] };
+            signUpAndCookie(
+                email?: string,
+                id?: mongoose.Types.ObjectId,
+            ): { id: string; cookies: string[] };
         }
     }
 }
@@ -41,14 +44,14 @@ afterAll(async () => {
     await mongoose.connection.close();
 });
 
-global.signUpAndCookie = () => {
+global.signUpAndCookie = (email, id) => {
     // Define a token payload for a user
     const payload = {
-        id: new mongoose.Types.ObjectId(),
-        email: 'text@example.com',
+        id: id || new mongoose.Types.ObjectId(),
+        email: email || 'text@example.com',
     };
     // Sign a token
-    const token = jwt.sign(payload, process.env.JWT_SECRET!);
+    const token = jwt.sign(payload, 'process.env.JWT_SECRET!');
     // Create a session object
     const session = { jwt: token };
     const sessionJson = JSON.stringify(session);
