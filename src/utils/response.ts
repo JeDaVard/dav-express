@@ -31,7 +31,7 @@ export function response<T = null>(
     success: boolean = false,
     data?: T | null,
     message?: string,
-    errors?: any,
+    errors?: [],
 ) {
     switch (code) {
         case 200: {

@@ -11,7 +11,7 @@ module.exports = {
         'prettier/@typescript-eslint',
     ],
     parserOptions: {
-        project: ['./tsconfig.json'],
+        // project: ['./tsconfig.json', './tsconfig.eslint.json'],
         ecmaVersion: 2018,
         ecmaFeatures: {
             impliedStrict: true,

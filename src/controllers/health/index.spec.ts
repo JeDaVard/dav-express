@@ -5,8 +5,10 @@ import { healthController } from './index';
 const sleep = (x: number) => new Promise((resolve) => setTimeout(resolve, x));
 
 describe('healthController', () => {
+    /* eslint-disable */
     let req: httpMocks.MockRequest<any>;
     let res: httpMocks.MockResponse<any>;
+    /* eslint-enable */
 
     beforeEach(() => {
         req = httpMocks.createRequest();

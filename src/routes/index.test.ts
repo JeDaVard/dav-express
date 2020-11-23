@@ -14,6 +14,7 @@ describe('General API Routes', () => {
             const response = await server.get('/does/not/exist');
 
             expect(response.status).toBe(404);
+
             expect(response.type).toBe('application/json');
             expect(response.body).toHaveProperty('success', false);
             expect(response.body).toHaveProperty('message', 'Failed');

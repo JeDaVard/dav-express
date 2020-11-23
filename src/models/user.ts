@@ -52,10 +52,11 @@ userSchema.pre('save', async function (next) {
     next();
 });
 
+// eslint-disable-next-line
+const User = mongoose.model<UserDocument, UserModel>('User', userSchema);
+
 userSchema.statics.build = (attrs: UserAttrs) => {
     return new User(attrs);
 };
-
-const User = mongoose.model<UserDocument, UserModel>('User', userSchema);
 
 export { User };
