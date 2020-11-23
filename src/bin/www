@@ -1,4 +1,5 @@
-// import dotenv from 'dotenv'
+require('dotenv').config()
+console.log(process.env.BASE_API_URL);
 const mongoose = require('mongoose');
 const http = require('http');
 
@@ -19,7 +20,7 @@ const port = 5000;
 (async function () {
 	try {
 		// Connect to DB
-		await mongoose.connect('mongodb+srv://davit:vardanyan@cluster0.zd3fq.mongodb.net/dav-express?retryWrites=true&w=majority', {
+		await mongoose.connect(process.env.MONGO_URI, {
 		    useNewUrlParser: true,
 		    useCreateIndex: true,
 		    useUnifiedTopology: true,

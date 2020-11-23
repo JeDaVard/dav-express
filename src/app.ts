@@ -1,14 +1,14 @@
 import express from 'express';
 import 'express-async-errors';
 import session from 'cookie-session';
-
-import { NotFoundError } from 'libs/errors';
-import { currentUser, errorHandler } from 'middlewares';
-import { UserRouter } from 'routes';
+import router from 'routes';
+import { headers } from 'utils/headers';
 
 const app = express();
 
+app.disable('x-powered-by');
 app.set('trust proxy', true);
+app.use(headers);
 app.use(express.json());
 app.use(
     session({
@@ -17,18 +17,7 @@ app.use(
     }),
 );
 
-app.use(currentUser);
-
-app.use('/api/users', UserRouter);
-
-app.get('/api/ping', (req, res) => {
-    res.status(200).send('Pong');
-});
-
-app.use('*', async () => {
-    throw new NotFoundError();
-});
-
-app.use(errorHandler);
+// Inject apis
+app.use(router);
 
 export { app };

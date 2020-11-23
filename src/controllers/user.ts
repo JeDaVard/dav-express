@@ -21,7 +21,7 @@ export const signIn = async (req: Request, res: Response) => {
 
     const token = jwt.sign(
         { id: existingUser.id, email: existingUser.email },
-        'process.env.JWT_SECRET!',
+        process.env.JWT_SECRET!,
         {},
     );
 
@@ -40,7 +40,7 @@ export const signUp = async (req: Request, res: Response) => {
     const user = User.build({ email, password });
     await user.save();
 
-    const token = jwt.sign({ id: user.id, email: user.email }, 'process.env.JWT_SECRET!', {});
+    const token = jwt.sign({ id: user.id, email: user.email }, process.env.JWT_SECRET!, {});
 
     req.session = { jwt: token };
 

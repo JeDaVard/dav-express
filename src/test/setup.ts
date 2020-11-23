@@ -1,6 +1,9 @@
+import dotenv from 'dotenv';
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
+
+dotenv.config();
 
 // DO NOT UNCOMMENT THIS WITHOUT A DEEP INVESTIGATION
 // jest.mock('@kuber-ticket/micro-events')
@@ -51,7 +54,7 @@ global.signUpAndCookie = (email, id) => {
         email: email || 'text@example.com',
     };
     // Sign a token
-    const token = jwt.sign(payload, 'process.env.JWT_SECRET!');
+    const token = jwt.sign(payload, process.env.JWT_SECRET!);
     // Create a session object
     const session = { jwt: token };
     const sessionJson = JSON.stringify(session);

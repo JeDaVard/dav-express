@@ -10,7 +10,6 @@
         "build": "npm run clean && tsc",
         "start": "npm run build && NODE_PATH=./dist node ./src/bin/www",
         "dev": "NODE_ENV=development NODE_PATH=./src ts-node-dev --poll --files --inspect -- ./src/bin/www",
-        "dev2": "NODE_PATH=./src ts-node ./src/bin/www",
         "test:ci": "jest",
         "test": "jest --watch --no-cache",
         "prettier": "prettier 'src' --write --ignore-unknown",
@@ -20,7 +19,10 @@
         "test:unit": "jest \\.spec\\.ts?$",
         "test:comp": "jest \\.test\\.ts?$",
         "test:watch": "jest --watch --notify",
-        "test:cover": "node ./tools/test-cover.js"
+        "test:cover": "node ./tools/test-cover.js",
+        "db:migrate": "./node_modules/.bin/sequelize db:migrate",
+        "db:undo": "./node_modules/.bin/sequelize db:migrate:undo",
+        "db:new": "./node_modules/.bin/sequelize migration:create"
     },
     "keywords": [],
     "author": "",
@@ -31,6 +33,7 @@
         "express": "^4.17.1",
         "express-async-errors": "^3.1.1",
         "express-validator": "^6.6.1",
+        "joi": "^17.3.0",
         "jsonwebtoken": "^8.5.1",
         "mongoose": "^5.10.15",
         "mongoose-update-if-current": "^1.4.0",
@@ -42,7 +45,6 @@
         "@types/cookie-session": "^2.0.41",
         "@types/dotenv": "^8.2.0",
         "@types/express": "^4.17.9",
-        "@types/express-session": "^1.17.3",
         "@types/jest": "^26.0.15",
         "@types/joi": "^14.3.4",
         "@types/jsonwebtoken": "^8.5.0",
@@ -61,6 +63,7 @@
         "jest": "^26.6.3",
         "lint-staged": "^10.5.1",
         "mongodb-memory-server": "^6.9.2",
+        "node-mocks-http": "^1.9.0",
         "prettier": "^2.2.0",
         "supertest": "^5.0.0",
         "ts-jest": "^26.4.4"
@@ -68,17 +71,13 @@
     "husky": {
         "hooks": {
             "pre-commit": "lint-staged",
-            "pre-push": "npm run tes:ci && git push"
+            "pre-push": "npm run test:ci"
         }
     },
     "lint-staged": {
         "*.js": "eslint --cache --fix",
         "*.ts": [
-            "eslint --fix",
-            "git add"
-        ],
-        ".env*": [
-            "npm run lint:dotenv"
+            "eslint --fix"
         ]
     }
 }

@@ -62,20 +62,15 @@
         // ADDED LATER
         "pretty": true,
         "resolveJsonModule": true
-    }
+    },
     //  "include": ["src/**/*.*"],
-//    "exclude": [
-//        "node_modules",
+    "exclude": [
+        "node_modules"
 //        "src/**/*.test.*",
 //        "**/*.spec.*",
 //        "**/__test__/*",
 //        "**/__mocks__/*",
-//        "**/__mockData__/"
-//    ]
-    /* Sev only config*/
-    //  "exclude": [
-    //    "node_modules",
-    //    "**/*.spec.*",
-    //    "**/*.test.*"
-    //  ]
+//        "**/__mockData__/",
+//        "src/test"
+    ]
 }
