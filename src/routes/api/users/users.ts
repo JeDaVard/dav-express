@@ -1,33 +1,14 @@
 import { Router } from 'express';
 import { userController } from 'controllers';
 import { validateRequest } from 'middlewares';
-import { body } from 'express-validator';
+import { usersInputSchema } from '../../../config/validations/users';
 
 const router = Router();
 
 router.get('/me', userController.currentUser);
 
-router.post(
-    '/sign-in',
-    [
-        body('email').isEmail().withMessage('Email must be valid'),
-        body('password').trim().notEmpty().withMessage('Password must be provided'),
-    ],
-    validateRequest,
-    userController.signIn,
-);
-router.post(
-    '/sign-up',
-    [
-        body('email').isEmail().withMessage('Email must be valid'),
-        body('password')
-            .trim()
-            .isLength({ min: 4, max: 20 })
-            .withMessage('You must provide 4-20 character password'),
-    ],
-    validateRequest,
-    userController.signUp,
-);
+router.post('/sign-in', validateRequest(usersInputSchema.signIn), userController.signIn);
+router.post('/sign-up', validateRequest(usersInputSchema.signUp), userController.signUp);
 router.post('/sign-out', userController.signOut);
 
 export { router };

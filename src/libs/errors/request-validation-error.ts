@@ -1,19 +1,29 @@
-import { ValidationError } from 'express-validator';
-import { CustomError } from './error-interfaces';
+import { CustomError, SerializedErrors } from './error-interfaces';
+import { ValidationError } from 'joi';
 
 export class RequestValidationError extends CustomError {
-    constructor(public errors: ValidationError[], public code: number = 400) {
+    constructor(
+        public errors: { errors: ValidationError; sourceType: string }[],
+        public code: number = 400,
+    ) {
         super('Unknown validation error');
 
         // Only because we are extending a build-in class
         Object.setPrototypeOf(this, RequestValidationError.prototype);
     }
     serialize() {
-        return this.errors.map((err) => {
-            return {
-                message: err.msg,
-                field: err.param,
-            };
+        const errors: SerializedErrors[] = [];
+
+        this.errors.forEach((errObj) => {
+            errObj.errors.details.forEach((err) => {
+                errors.push({
+                    message: err.message,
+                    field: err.context?.key || String(err.path[0]),
+                    source: errObj.sourceType,
+                });
+            });
         });
+
+        return errors;
     }
 }

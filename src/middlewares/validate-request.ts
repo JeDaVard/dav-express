@@ -1,12 +1,49 @@
 import { Request, Response, NextFunction } from 'express';
-import { validationResult } from 'express-validator';
+import { ObjectSchema } from 'joi';
 
 import { RequestValidationError } from 'libs/errors';
 
-export const validateRequest = (req: Request, res: Response, next: NextFunction) => {
-    const errors = validationResult(req);
+interface ValidationSchema {
+    body?: ObjectSchema;
+    params?: ObjectSchema;
+    query?: ObjectSchema;
+}
 
-    if (!errors.isEmpty()) throw new RequestValidationError(errors.array());
+enum fieldSourceKey {
+    body = 'body',
+    params = 'params',
+    query = 'query',
+}
+
+const options = {
+    abortEarly: false,
+    errors: {
+        escapeHtml: true,
+        wrap: {
+            label: false,
+        },
+    },
+};
+
+export const validateRequest = (inputs: ValidationSchema) => (
+    req: Request,
+    res: Response,
+    next: NextFunction,
+) => {
+    const results = validateReqBySchema(req, inputs);
+
+    if (results.length > 0) throw new RequestValidationError(results);
 
     next();
+};
+
+const validateReqBySchema = (req: Request, schemas: ValidationSchema) => {
+    const validated = Object.entries(schemas).map(([key, schema]) => {
+        const sourceType = key as fieldSourceKey;
+        return {
+            errors: schema.validate(req[sourceType], options).error,
+            sourceType,
+        };
+    });
+    return validated.filter((errObj) => !!errObj.errors);
 };

@@ -1,6 +1,12 @@
+export interface SerializedErrors {
+    field?: string;
+    message?: string;
+    source?: string;
+}
+
 export abstract class CustomError extends Error {
     abstract code: number;
-    abstract serialize(): { message: string; field?: string }[];
+    abstract serialize(): SerializedErrors[];
     protected constructor(message: string) {
         super(message);
 

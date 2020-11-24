@@ -27,7 +27,9 @@ const port = 5000;
 		console.log('[Node Process] Ticket mongodb is connected...')
 	} catch (e) {
 		console.error(e);
+		process.exit();
 	}
+
 	// Run the server
 	server.listen(port, () => {
 		console.log(`[Node Process] Server is up on ${port}, env: ${process.env.NODE_ENV}`);
