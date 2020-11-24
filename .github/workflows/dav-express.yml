@@ -1,4 +1,4 @@
-name: dav-express
+name: dav-express-test
 
 on:
   push:
@@ -12,10 +12,18 @@ on:
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x, 14.x]
 
     steps:
       - uses: actions/checkout@v2
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v2.1.2
-      - run: npm install && npm run test:ci
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2.1.2 #optional? investigate
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install
+      - run: npm run test:ci
