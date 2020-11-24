@@ -1,5 +1,7 @@
-/node_modules
 .git
+/node_modules
+/dist
+/coverage
 npm-debug.log
 docker-compose*.yml
 *.env
