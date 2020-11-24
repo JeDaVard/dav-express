@@ -130,7 +130,7 @@ describe('User Sign-up', () => {
 describe('Current user route', () => {
     it("returns current user's details", async () => {
         const email = 'some-email@example.com';
-        const user = await global.signUpAndCookie(email);
+        const user = global.signUpAndCookie(email);
 
         let response = await request(app)
             .get('/api/users/me')

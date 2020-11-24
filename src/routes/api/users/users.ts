@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { userController } from 'controllers';
 import { validateRequest } from 'middlewares';
-import { usersInputSchema } from '../../../config/validations/users';
+import { usersInputSchema } from 'config/validations';
 
 const router = Router();
 
