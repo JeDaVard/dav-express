@@ -1,19 +1,27 @@
-#name: auth-test
-#
-#on:
-#  push:
-##    branches: [ main ]
+name: dav-express
+
+on:
+  push:
+    branches: [ main ]
 #    path:
 #      - 'auth/**'
-#  pull_request:
-##    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 #    path:
 #      - 'auth/**'
-#
-#jobs:
-#  build:
-#    runs-on: ubuntu-latest
-#
-#    steps:
-#      - uses: actions/checkout@v2
-#      - run: cd auth && npm install && npm run test:ci
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [ 12.x, 14.x ]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install && npm run test:ci
