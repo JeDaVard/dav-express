@@ -14,11 +14,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d94c5589-3348-44f4-9dfb-50efa0a4eca3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.github/count-badges.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.github/workflows/test-coverage-pass.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/test-coverage-pass.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/test-coverage-pass.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <list id="f2115c66-1c46-416a-9d03-51b7dd938030" name="badge test" comment="" />
     <list id="ee4925dd-5d78-4280-bd56-6142805d2804" name="cov badge percent" comment="" />
@@ -26,29 +23,7 @@
     <list id="13db420e-1a38-4cac-b8f3-1666e6bb5435" name="coverage job" comment="" />
     <list id="e1538a44-72fe-4c59-ba8b-4d7f4b386afa" name="env test" comment="" />
     <list id="d73c628d-6791-4404-a866-0587df531480" name="env var for test" comment="" />
-    <list id="b4595683-057c-463a-acc4-f512f434484c" name="git" comment="">
-      <change afterPath="$PROJECT_DIR$/.env.test" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25_11_20,_14_35_[Revert__coverage_and_test_config,_/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25_11_20,_14_35_[Revert__env_var_for_test_]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25_11_20,_14_35_[Revert__jest_config_comment_]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25_11_20,_14_35_[a]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25_11_20__14_35__Revert__coverage_and_test_config__.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25_11_20__14_35__Revert__env_var_for_test__.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25_11_20__14_35__Revert__jest_config_comment__.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25_11_20__14_35__a_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tsconfig.production.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/main.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jest.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/jest.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bin/www" beforeDir="false" afterPath="$PROJECT_DIR$/src/bin/www" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/api/users/__test__/users.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/api/users/__test__/users.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/api/users/users.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/api/users/users.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/setup.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/setup.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/coverage-total-reporter.js" beforeDir="false" afterPath="$PROJECT_DIR$/tools/coverage-total-reporter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-    </list>
+    <list id="b4595683-057c-463a-acc4-f512f434484c" name="git" comment="" />
     <list id="09c68407-4264-4f44-8a1c-146810735b75" name="jest config comment" comment="" />
     <list id="33078d16-53e4-4f95-af16-e82be494f234" name="line and comment counts" comment="" />
     <list id="bea5aaab-085d-4856-b2e1-dcc8a93065ee" name="secret var fix" comment="" />

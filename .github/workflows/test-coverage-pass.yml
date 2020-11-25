@@ -33,6 +33,18 @@ jobs:
       - name: Setup Node.js environment and Test coverage
         run: npm install && npm run test:cover
 
+      - name: Set coverage badge color
+        if: env.GH_COVERAGE < 50
+        run: echo "::set-env name=GH_COVERAGE_COLOR::red"
+
+      - name: Set coverage badge color
+        if: env.GH_COVERAGE >= 50 && env.GH_COVERAGE < 80
+        run: echo "::set-env name=GH_COVERAGE_COLOR::brightgreen"
+
+      - name: Set coverage badge color
+        if: env.GH_COVERAGE >= 80
+        run: echo "::set-env name=GH_COVERAGE_COLOR::yellowgreen"
+
       - name: Updating Coverage Badge
         uses: schneegans/dynamic-badges-action@v1.0.0
         with:
@@ -41,10 +53,7 @@ jobs:
           filename: dav-express-coverage.json
           label: Coverage
           message: ${{ env.GH_COVERAGE }}%
-          - if: env.GH_COVERAGE >= 50
-            color: green
-          - if: env.GH_COVERAGE >= 80
-            color: yellowgreen
+          color: ${{ env.GH_COVERAGE_COLOR }}
 
       - name: Updating Test Passing Badge To Passed
         uses: schneegans/dynamic-badges-action@v1.0.0
