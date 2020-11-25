@@ -9,7 +9,7 @@ interface ValidationSchema {
     query?: ObjectSchema;
 }
 
-enum fieldSourceKey {
+enum FieldSourceKey {
     body = 'body',
     params = 'params',
     query = 'query',
@@ -25,6 +25,19 @@ const options = {
     },
 };
 
+const validateReqBySchema = (req: Request, schemas: ValidationSchema) => {
+    const validated = Object.entries(schemas).map(([key, schema]) => {
+        const sourceType = key as FieldSourceKey;
+        // eslint-disable-next-line
+        const source = req[sourceType];
+        return {
+            errors: schema.validate(source, options).error,
+            sourceType,
+        };
+    });
+    return validated.filter((errObj) => !!errObj.errors);
+};
+
 export const validateRequest = (inputs: ValidationSchema) => (
     req: Request,
     res: Response,
@@ -35,15 +48,4 @@ export const validateRequest = (inputs: ValidationSchema) => (
     if (results.length > 0) throw new RequestValidationError(results);
 
     next();
-};
-
-const validateReqBySchema = (req: Request, schemas: ValidationSchema) => {
-    const validated = Object.entries(schemas).map(([key, schema]) => {
-        const sourceType = key as fieldSourceKey;
-        return {
-            errors: schema.validate(req[sourceType], options).error,
-            sourceType,
-        };
-    });
-    return validated.filter((errObj) => !!errObj.errors);
 };

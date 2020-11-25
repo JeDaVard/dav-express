@@ -1,9 +1,7 @@
-import dotenv from 'dotenv';
+import { env } from 'config/environment';
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
-
-dotenv.config({ path: './.env.test' });
 
 // DO NOT UNCOMMENT THIS WITHOUT A DEEP INVESTIGATION
 // jest.mock('@kuber-ticket/micro-events')
@@ -23,7 +21,7 @@ declare global {
 
 let mongo: MongoMemoryServer;
 beforeAll(async () => {
-    process.env.JWT_SECRET = 'some-test-secret';
+    env.jwtSecret = 'some-test-secret';
     mongo = new MongoMemoryServer();
     const mongoUri = await mongo.getUri();
 
@@ -54,7 +52,7 @@ global.signUpAndCookie = (email, id) => {
         email: email || 'text@example.com',
     };
     // Sign a token
-    const token = jwt.sign(payload, process.env.JWT_SECRET!);
+    const token = jwt.sign(payload, env.jwtSecret);
     // Create a session object
     const session = { jwt: token };
     const sessionJson = JSON.stringify(session);

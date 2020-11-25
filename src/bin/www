@@ -1,12 +1,5 @@
-const dotenv = require('dotenv')
 
-const result = dotenv.config({ path: './.env.local'})
-
-if (result.error) {
-	console.log(result);
-	process.exit()
-}
-
+const { env } = require('config/environment')
 const mongoose = require('mongoose');
 const http = require('http');
 
@@ -22,12 +15,10 @@ const server = http.createServer(app);
  * when you restart the container, and docker logs will always be empty
  * */
 
-const port = 5000;
-
 (async function () {
 	try {
 		// Connect to DB
-		await mongoose.connect(process.env.MONGO_URI, {
+		await mongoose.connect(env.mongoUri, {
 		    useNewUrlParser: true,
 		    useCreateIndex: true,
 		    useUnifiedTopology: true,
@@ -39,8 +30,8 @@ const port = 5000;
 	}
 
 	// Run the server
-	server.listen(port, () => {
-		console.log(`[Node Process] Server is up on ${port}, env: ${process.env.NODE_ENV}`);
+	server.listen(env.PORT, () => {
+		console.log(`[Node Process] Server is up on ${env.PORT}, env: ${process.env.NODE_ENV}`);
 
 		if (process.env.NODE_ENV !== 'development') {
 			// quit on ctrl-c when running docker in terminal
@@ -64,9 +55,10 @@ const port = 5000;
  */
 
 // shut down server
+// @ts-ignore
 function gracefulShutdown(signal) {
 	console.info(
-		`[Node Process]: ${new Date().toISOString()}, signal: ${signal}, port: ${port}, pid: ${
+		`[Node Process]: ${new Date().toISOString()}, signal: ${signal}, port: ${env.PORT}, pid: ${
 			process.pid
 		}`,
 	);
@@ -74,6 +66,7 @@ function gracefulShutdown(signal) {
 
 	// NOTE: server.close is for express based apps
 	// If using hapi, use `server.stop`
+	// @ts-ignore
 	server.close(function onServerClosed(err) {
 		if (err) {
 			console.error(err);
