@@ -1,3 +1,5 @@
+const { execSync } = require('child_process');
+
 class CoverageTotalReporter {
     constructor(opts) {
         this.opts = opts;
@@ -29,19 +31,28 @@ class CoverageTotalReporter {
         }
     }
 
+    execSync(...args) {
+        args.forEach((arg) => {
+            execSync(arg, { stdio: 'inherit' });
+        });
+    }
+
     onRunComplete(_, report) {
         if (!report.coverageMap) return;
 
         const { data: summary } = report.coverageMap.getCoverageSummary();
         this.summary = summary;
-
+        const coverage = this.getJestTotal();
         console.log(
             '=============================== Coverage Total ===============================',
         );
-        this.printTotal('Jest Total', this.getJestTotal(), true);
+        this.printTotal('Jest Total', coverage, true);
         console.log(
             '================================================================================',
         );
+        if (process.env.CI && process.env.GITHUB_WORKFLOW) {
+            this.execSync(`echo "GH_COVERAGE=${coverage}" >> $GITHUB_ENV`);
+        }
     }
 }
 

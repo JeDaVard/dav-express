@@ -1,5 +1,8 @@
 ## Description
 
+![test-status](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/jedavard/cf394ed0edc2f4dd2f1d692cedd26a77/raw/dav-express-test-pass-badge.json)
+![coverage](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/jedavard/8538c4d06e5772f17bf3d6ee9f32c211/raw/dav-express-coverage.json)
+
 Desc
 
 ## Quick Start

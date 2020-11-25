@@ -1,0 +1,242 @@
+Index: .eslintcache
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>[{\"/Users/davitvardanyan/Dev/dav-express/jest.config.js\":\"1\",\"/Users/davitvardanyan/Dev/dav-express/tools/coverage-total-reporter.js\":\"2\"},{\"size\":1160,\"mtime\":1606258571176,\"results\":\"3\",\"hashOfConfig\":\"4\"},{\"size\":1822,\"mtime\":1606295745969,\"results\":\"5\",\"hashOfConfig\":\"4\"},{\"filePath\":\"6\",\"messages\":\"7\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},\"10f2n2s\",{\"filePath\":\"8\",\"messages\":\"9\",\"errorCount\":0,\"warningCount\":6,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"source\":null},\"/Users/davitvardanyan/Dev/dav-express/jest.config.js\",[],\"/Users/davitvardanyan/Dev/dav-express/tools/coverage-total-reporter.js\",[\"10\",\"11\",\"12\",\"13\",\"14\",\"15\"],{\"ruleId\":\"16\",\"severity\":1,\"message\":\"17\",\"line\":1,\"column\":22,\"nodeType\":\"18\",\"endLine\":1,\"endColumn\":46},{\"ruleId\":\"19\",\"severity\":1,\"message\":\"20\",\"line\":28,\"column\":13,\"nodeType\":\"21\",\"messageId\":\"22\",\"endLine\":28,\"endColumn\":24},{\"ruleId\":\"19\",\"severity\":1,\"message\":\"20\",\"line\":30,\"column\":13,\"nodeType\":\"21\",\"messageId\":\"22\",\"endLine\":30,\"endColumn\":24},{\"ruleId\":\"19\",\"severity\":1,\"message\":\"20\",\"line\":46,\"column\":9,\"nodeType\":\"21\",\"messageId\":\"22\",\"endLine\":46,\"endColumn\":20},{\"ruleId\":\"19\",\"severity\":1,\"message\":\"20\",\"line\":50,\"column\":9,\"nodeType\":\"21\",\"messageId\":\"22\",\"endLine\":50,\"endColumn\":20},{\"ruleId\":\"19\",\"severity\":1,\"message\":\"20\",\"line\":53,\"column\":9,\"nodeType\":\"21\",\"messageId\":\"22\",\"endLine\":53,\"endColumn\":20},\"security/detect-child-process\",\"Found require(\\\"child_process\\\")\",\"CallExpression\",\"no-console\",\"Unexpected console statement.\",\"MemberExpression\",\"unexpected\"]
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .eslintcache	(revision 5097056d8ac7c0b4402d0d7d5b6384c50f20a69e)
++++ .eslintcache	(date 1606300339834)
+@@ -1,1 +1,1 @@
+-[{"/Users/davitvardanyan/Dev/dav-express/jest.config.js":"1","/Users/davitvardanyan/Dev/dav-express/tools/coverage-total-reporter.js":"2"},{"size":1160,"mtime":1606258571176,"results":"3","hashOfConfig":"4"},{"size":1822,"mtime":1606295745969,"results":"5","hashOfConfig":"4"},{"filePath":"6","messages":"7","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"10f2n2s",{"filePath":"8","messages":"9","errorCount":0,"warningCount":6,"fixableErrorCount":0,"fixableWarningCount":0,"source":null},"/Users/davitvardanyan/Dev/dav-express/jest.config.js",[],"/Users/davitvardanyan/Dev/dav-express/tools/coverage-total-reporter.js",["10","11","12","13","14","15"],{"ruleId":"16","severity":1,"message":"17","line":1,"column":22,"nodeType":"18","endLine":1,"endColumn":46},{"ruleId":"19","severity":1,"message":"20","line":28,"column":13,"nodeType":"21","messageId":"22","endLine":28,"endColumn":24},{"ruleId":"19","severity":1,"message":"20","line":30,"column":13,"nodeType":"21","messageId":"22","endLine":30,"endColumn":24},{"ruleId":"19","severity":1,"message":"20","line":46,"column":9,"nodeType":"21","messageId":"22","endLine":46,"endColumn":20},{"ruleId":"19","severity":1,"message":"20","line":50,"column":9,"nodeType":"21","messageId":"22","endLine":50,"endColumn":20},{"ruleId":"19","severity":1,"message":"20","line":53,"column":9,"nodeType":"21","messageId":"22","endLine":53,"endColumn":20},"security/detect-child-process","Found require(\"child_process\")","CallExpression","no-console","Unexpected console statement.","MemberExpression","unexpected"]
+\ No newline at end of file
++[{"/Users/davitvardanyan/Dev/dav-express/jest.config.js":"1"},{"size":951,"mtime":1606300323449,"results":"2","hashOfConfig":"3"},{"filePath":"4","messages":"5","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"10f2n2s","/Users/davitvardanyan/Dev/dav-express/jest.config.js",[]]
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_rebase_[Revert__coverage_and_test_config,_prod_tsconfig_]/shelved.patch
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/shelf/Uncommitted_changes_before_rebase_[Revert__coverage_and_test_config,_prod_tsconfig_]/shelved.patch	(date 1606299971960)
++++ .idea/shelf/Uncommitted_changes_before_rebase_[Revert__coverage_and_test_config,_prod_tsconfig_]/shelved.patch	(date 1606299971960)
+@@ -0,0 +1,14 @@
++Index: .eslintcache
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
++<+>[{\"/Users/davitvardanyan/Dev/dav-express/jest.config.js\":\"1\",\"/Users/davitvardanyan/Dev/dav-express/tools/coverage-total-reporter.js\":\"2\"},{\"size\":1001,\"mtime\":1606299891772,\"results\":\"3\",\"hashOfConfig\":\"4\"},{\"size\":1822,\"mtime\":1606295745969,\"results\":\"5\",\"hashOfConfig\":\"4\"},{\"filePath\":\"6\",\"messages\":\"7\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},\"10f2n2s\",{\"filePath\":\"8\",\"messages\":\"9\",\"errorCount\":0,\"warningCount\":6,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"source\":null},\"/Users/davitvardanyan/Dev/dav-express/jest.config.js\",[],\"/Users/davitvardanyan/Dev/dav-express/tools/coverage-total-reporter.js\",[\"10\",\"11\",\"12\",\"13\",\"14\",\"15\"],{\"ruleId\":\"16\",\"severity\":1,\"message\":\"17\",\"line\":1,\"column\":22,\"nodeType\":\"18\",\"endLine\":1,\"endColumn\":46},{\"ruleId\":\"19\",\"severity\":1,\"message\":\"20\",\"line\":28,\"column\":13,\"nodeType\":\"21\",\"messageId\":\"22\",\"endLine\":28,\"endColumn\":24},{\"ruleId\":\"19\",\"severity\":1,\"message\":\"20\",\"line\":30,\"column\":13,\"nodeType\":\"21\",\"messageId\":\"22\",\"endLine\":30,\"endColumn\":24},{\"ruleId\":\"19\",\"severity\":1,\"message\":\"20\",\"line\":46,\"column\":9,\"nodeType\":\"21\",\"messageId\":\"22\",\"endLine\":46,\"endColumn\":20},{\"ruleId\":\"19\",\"severity\":1,\"message\":\"20\",\"line\":50,\"column\":9,\"nodeType\":\"21\",\"messageId\":\"22\",\"endLine\":50,\"endColumn\":20},{\"ruleId\":\"19\",\"severity\":1,\"message\":\"20\",\"line\":53,\"column\":9,\"nodeType\":\"21\",\"messageId\":\"22\",\"endLine\":53,\"endColumn\":20},\"security/detect-child-process\",\"Found require(\\\"child_process\\\")\",\"CallExpression\",\"no-console\",\"Unexpected console statement.\",\"MemberExpression\",\"unexpected\"]
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++--- .eslintcache	(revision 4e66e2f3328f3c8d682914d76b6a78c5ac89d083)
+++++ .eslintcache	(date 1606299910057)
++@@ -1,1 +1,1 @@
++-[{"/Users/davitvardanyan/Dev/dav-express/jest.config.js":"1","/Users/davitvardanyan/Dev/dav-express/tools/coverage-total-reporter.js":"2"},{"size":1001,"mtime":1606299891772,"results":"3","hashOfConfig":"4"},{"size":1822,"mtime":1606295745969,"results":"5","hashOfConfig":"4"},{"filePath":"6","messages":"7","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"10f2n2s",{"filePath":"8","messages":"9","errorCount":0,"warningCount":6,"fixableErrorCount":0,"fixableWarningCount":0,"source":null},"/Users/davitvardanyan/Dev/dav-express/jest.config.js",[],"/Users/davitvardanyan/Dev/dav-express/tools/coverage-total-reporter.js",["10","11","12","13","14","15"],{"ruleId":"16","severity":1,"message":"17","line":1,"column":22,"nodeType":"18","endLine":1,"endColumn":46},{"ruleId":"19","severity":1,"message":"20","line":28,"column":13,"nodeType":"21","messageId":"22","endLine":28,"endColumn":24},{"ruleId":"19","severity":1,"message":"20","line":30,"column":13,"nodeType":"21","messageId":"22","endLine":30,"endColumn":24},{"ruleId":"19","severity":1,"message":"20","line":46,"column":9,"nodeType":"21","messageId":"22","endLine":46,"endColumn":20},{"ruleId":"19","severity":1,"message":"20","line":50,"column":9,"nodeType":"21","messageId":"22","endLine":50,"endColumn":20},{"ruleId":"19","severity":1,"message":"20","line":53,"column":9,"nodeType":"21","messageId":"22","endLine":53,"endColumn":20},"security/detect-child-process","Found require(\"child_process\")","CallExpression","no-console","Unexpected console statement.","MemberExpression","unexpected"]
++\ No newline at end of file
+++[{"/Users/davitvardanyan/Dev/dav-express/jest.config.js":"1"},{"size":951,"mtime":1606299901491,"results":"2","hashOfConfig":"3"},{"filePath":"4","messages":"5","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"10f2n2s","/Users/davitvardanyan/Dev/dav-express/jest.config.js",[]]
++\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"BranchesTreeState\">\n    <expand>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"LOCAL_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"LOCAL_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"GROUP_NODE:setup\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"GROUP_NODE:origin\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n    </expand>\n    <select>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"LOCAL_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"GROUP_NODE:setup\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"BRANCH:setup/configs\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n    </select>\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"d94c5589-3348-44f4-9dfb-50efa0a4eca3\" name=\"Default Changelist\" comment=\"\">\n      <change beforePath=\"$PROJECT_DIR$/.dockerignore\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.dockerignore\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.gitignore\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.gitignore\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"TypeScript File\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"b41607a0423db5ee2ef806f1412bdba93383c66d\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n    <option name=\"RESET_MODE\" value=\"HARD\" />\n  </component>\n  <component name=\"KubernetesApiPersistence\">\n    <option name=\"context\" value=\"docker-desktop\" />\n    <option name=\"namespace\" value=\"default\" />\n  </component>\n  <component name=\"ProjectId\" id=\"1j6rUawbja3gpWQsWCS4HYAnAAK\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\n    <property name=\"javascript.nodejs.core.library.configured.version\" value=\"15.0.1\" />\n    <property name=\"javascript.nodejs.core.library.typings.version\" value=\"14.14.2\" />\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\n    <property name=\"nodejs_interpreter_path\" value=\"$USER_HOME$/.nvm/versions/node/v14.15.0/bin/node\" />\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\n    <property name=\"prettier.import.notification.dismissed\" value=\"true\" />\n    <property name=\"prettierjs.PrettierConfiguration.Package\" value=\"$PROJECT_DIR$/node_modules/prettier\" />\n    <property name=\"run.prettier.on.save\" value=\"true\" />\n    <property name=\"settings.editor.selected.configurable\" value=\"settings.nodejs\" />\n    <property name=\"ts.external.directory.path\" value=\"$PROJECT_DIR$/node_modules/typescript/lib\" />\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\n  </component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$\" />\n      <recent name=\"$PROJECT_DIR$/src/routes\" />\n      <recent name=\"$PROJECT_DIR$/src/controllers\" />\n      <recent name=\"$PROJECT_DIR$/src/components\" />\n      <recent name=\"$PROJECT_DIR$/src/models\" />\n    </key>\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/src/routes/api\" />\n      <recent name=\"$PROJECT_DIR$/src/routes/user\" />\n      <recent name=\"$PROJECT_DIR$/src/utils\" />\n      <recent name=\"$PROJECT_DIR$/src/test\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"Dockerfile\" type=\"docker-deploy\" factoryName=\"dockerfile\" temporary=\"true\" server-name=\"Docker\">\n      <deployment type=\"dockerfile\">\n        <settings>\n          <option name=\"sourceFilePath\" value=\"Dockerfile.template.yml\" />\n        </settings>\n      </deployment>\n      <method v=\"2\" />\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Docker.Dockerfile\" />\n        <item itemvalue=\"Docker.Dockerfile\" />\n        <item itemvalue=\"Docker.Dockerfile\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"d94c5589-3348-44f4-9dfb-50efa0a4eca3\" name=\"Default Changelist\" comment=\"\" />\n      <created>1603135399207</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1603135399207</updated>\n      <workItem from=\"1603135400294\" duration=\"1106000\" />\n      <workItem from=\"1603138399400\" duration=\"1518000\" />\n      <workItem from=\"1603176969913\" duration=\"262000\" />\n      <workItem from=\"1603264243972\" duration=\"304000\" />\n      <workItem from=\"1603396866891\" duration=\"73000\" />\n      <workItem from=\"1604174096160\" duration=\"347000\" />\n      <workItem from=\"1604209631918\" duration=\"15412000\" />\n      <workItem from=\"1604252262434\" duration=\"1339000\" />\n      <workItem from=\"1605071407573\" duration=\"219000\" />\n      <workItem from=\"1605882981503\" duration=\"12676000\" />\n      <workItem from=\"1605936838729\" duration=\"5009000\" />\n      <workItem from=\"1605946839202\" duration=\"8140000\" />\n      <workItem from=\"1605956804124\" duration=\"2279000\" />\n      <workItem from=\"1606039052261\" duration=\"13478000\" />\n      <workItem from=\"1606080845840\" duration=\"1068000\" />\n      <workItem from=\"1606117725817\" duration=\"3990000\" />\n      <workItem from=\"1606121872711\" duration=\"9799000\" />\n      <workItem from=\"1606134664481\" duration=\"20130000\" />\n      <workItem from=\"1606198243350\" duration=\"2279000\" />\n    </task>\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"UnknownFeatures\">\n    <option featureType=\"com.intellij.fileTypeFactory\" implementationName=\"main.yml\" />\n  </component>\n  <component name=\"Vcs.Log.History.Properties\">\n    <option name=\"COLUMN_ORDER\">\n      <list>\n        <option value=\"0\" />\n        <option value=\"2\" />\n        <option value=\"3\" />\n        <option value=\"1\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State>\n              <option name=\"FILTERS\">\n                <map>\n                  <entry key=\"branch\">\n                    <value>\n                      <list>\n                        <option value=\"setup/configs\" />\n                      </list>\n                    </value>\n                  </entry>\n                </map>\n              </option>\n            </State>\n          </value>\n        </entry>\n      </map>\n    </option>\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\n  </component>\n  <component name=\"WindowStateProjectService\">\n    <state x=\"528\" y=\"272\" key=\"#Usage_Scope\" timestamp=\"1603396929802\">\n      <screen x=\"0\" y=\"0\" width=\"1440\" height=\"900\" />\n    </state>\n    <state x=\"528\" y=\"272\" key=\"#Usage_Scope/0.0.1440.900@0.0.1440.900\" timestamp=\"1603396929802\" />\n    <state x=\"457\" y=\"247\" key=\"#com.intellij.fileTypes.FileTypeChooser\" timestamp=\"1606051911018\">\n      <screen x=\"0\" y=\"0\" width=\"1440\" height=\"900\" />\n    </state>\n    <state x=\"457\" y=\"247\" key=\"#com.intellij.fileTypes.FileTypeChooser/-1440.0.1440.900/0.0.1440.900@0.0.1440.900\" timestamp=\"1606051911018\" />\n    <state width=\"1398\" height=\"297\" key=\"GridCell.Tab.0.bottom\" timestamp=\"1606130744797\">\n      <screen x=\"0\" y=\"0\" width=\"1440\" height=\"900\" />\n    </state>\n    <state width=\"1398\" height=\"297\" key=\"GridCell.Tab.0.bottom/-1440.0.1440.900/0.0.1440.900@0.0.1440.900\" timestamp=\"1606130744797\" />\n    <state width=\"1398\" height=\"286\" key=\"GridCell.Tab.0.bottom/-1440.25.1440.875/0.25.1440.875@0.25.1440.875\" timestamp=\"1605946807964\" />\n    <state width=\"1398\" height=\"297\" key=\"GridCell.Tab.0.center\" timestamp=\"1606130744796\">\n      <screen x=\"0\" y=\"0\" width=\"1440\" height=\"900\" />\n    </state>\n    <state width=\"1398\" height=\"297\" key=\"GridCell.Tab.0.center/-1440.0.1440.900/0.0.1440.900@0.0.1440.900\" timestamp=\"1606130744796\" />\n    <state width=\"1398\" height=\"286\" key=\"GridCell.Tab.0.center/-1440.25.1440.875/0.25.1440.875@0.25.1440.875\" timestamp=\"1605946807962\" />\n    <state width=\"1398\" height=\"297\" key=\"GridCell.Tab.0.left\" timestamp=\"1606130744795\">\n      <screen x=\"0\" y=\"0\" width=\"1440\" height=\"900\" />\n    </state>\n    <state width=\"1398\" height=\"297\" key=\"GridCell.Tab.0.left/-1440.0.1440.900/0.0.1440.900@0.0.1440.900\" timestamp=\"1606130744795\" />\n    <state width=\"1398\" height=\"286\" key=\"GridCell.Tab.0.left/-1440.25.1440.875/0.25.1440.875@0.25.1440.875\" timestamp=\"1605946807961\" />\n    <state width=\"1398\" height=\"297\" key=\"GridCell.Tab.0.right\" timestamp=\"1606130744796\">\n      <screen x=\"0\" y=\"0\" width=\"1440\" height=\"900\" />\n    </state>\n    <state width=\"1398\" height=\"297\" key=\"GridCell.Tab.0.right/-1440.0.1440.900/0.0.1440.900@0.0.1440.900\" timestamp=\"1606130744796\" />\n    <state width=\"1398\" height=\"286\" key=\"GridCell.Tab.0.right/-1440.25.1440.875/0.25.1440.875@0.25.1440.875\" timestamp=\"1605946807962\" />\n    <state width=\"1398\" height=\"297\" key=\"GridCell.Tab.1.bottom\" timestamp=\"1606130744801\">\n      <screen x=\"0\" y=\"0\" width=\"1440\" height=\"900\" />\n    </state>\n    <state width=\"1398\" height=\"297\" key=\"GridCell.Tab.1.bottom/-1440.0.1440.900/0.0.1440.900@0.0.1440.900\" timestamp=\"1606130744801\" />\n    <state width=\"1398\" height=\"286\" key=\"GridCell.Tab.1.bottom/-1440.25.1440.875/0.25.1440.875@0.25.1440.875\" timestamp=\"1605946807967\" />\n    <state width=\"1398\" height=\"297\" key=\"GridCell.Tab.1.center\" timestamp=\"1606130744799\">\n      <screen x=\"0\" y=\"0\" width=\"1440\" height=\"900\" />\n    </state>\n    <state width=\"1398\" height=\"297\" key=\"GridCell.Tab.1.center/-1440.0.1440.900/0.0.1440.900@0.0.1440.900\" timestamp=\"1606130744799\" />\n    <state width=\"1398\" height=\"286\" key=\"GridCell.Tab.1.center/-1440.25.1440.875/0.25.1440.875@0.25.1440.875\" timestamp=\"1605946807966\" />\n    <state width=\"1398\" height=\"297\" key=\"GridCell.Tab.1.left\" timestamp=\"1606130744798\">\n      <screen x=\"0\" y=\"0\" width=\"1440\" height=\"900\" />\n    </state>\n    <state width=\"1398\" height=\"297\" key=\"GridCell.Tab.1.left/-1440.0.1440.900/0.0.1440.900@0.0.1440.900\" timestamp=\"1606130744798\" />\n    <state width=\"1398\" height=\"286\" key=\"GridCell.Tab.1.left/-1440.25.1440.875/0.25.1440.875@0.25.1440.875\" timestamp=\"1605946807966\" />\n    <state width=\"1398\" height=\"297\" key=\"GridCell.Tab.1.right\" timestamp=\"1606130744800\">\n      <screen x=\"0\" y=\"0\" width=\"1440\" height=\"900\" />\n    </state>\n    <state width=\"1398\" height=\"297\" key=\"GridCell.Tab.1.right/-1440.0.1440.900/0.0.1440.900@0.0.1440.900\" timestamp=\"1606130744800\" />\n    <state width=\"1398\" height=\"286\" key=\"GridCell.Tab.1.right/-1440.25.1440.875/0.25.1440.875@0.25.1440.875\" timestamp=\"1605946807967\" />\n    <state width=\"1398\" height=\"297\" key=\"GridCell.Tab.2.bottom\" timestamp=\"1606130744804\">\n      <screen x=\"0\" y=\"0\" width=\"1440\" height=\"900\" />\n    </state>\n    <state width=\"1398\" height=\"297\" key=\"GridCell.Tab.2.bottom/-1440.0.1440.900/0.0.1440.900@0.0.1440.900\" timestamp=\"1606130744804\" />\n    <state width=\"1398\" height=\"286\" key=\"GridCell.Tab.2.bottom/-1440.25.1440.875/0.25.1440.875@0.25.1440.875\" timestamp=\"1605946807969\" />\n    <state width=\"1398\" height=\"297\" key=\"GridCell.Tab.2.center\" timestamp=\"1606130744802\">\n      <screen x=\"0\" y=\"0\" width=\"1440\" height=\"900\" />\n    </state>\n    <state width=\"1398\" height=\"297\" key=\"GridCell.Tab.2.center/-1440.0.1440.900/0.0.1440.900@0.0.1440.900\" timestamp=\"1606130744802\" />\n    <state width=\"1398\" height=\"286\" key=\"GridCell.Tab.2.center/-1440.25.1440.875/0.25.1440.875@0.25.1440.875\" timestamp=\"1605946807968\" />\n    <state width=\"1398\" height=\"297\" key=\"GridCell.Tab.2.left\" timestamp=\"1606130744802\">\n      <screen x=\"0\" y=\"0\" width=\"1440\" height=\"900\" />\n    </state>\n    <state width=\"1398\" height=\"297\" key=\"GridCell.Tab.2.left/-1440.0.1440.900/0.0.1440.900@0.0.1440.900\" timestamp=\"1606130744802\" />\n    <state width=\"1398\" height=\"286\" key=\"GridCell.Tab.2.left/-1440.25.1440.875/0.25.1440.875@0.25.1440.875\" timestamp=\"1605946807968\" />\n    <state width=\"1398\" height=\"297\" key=\"GridCell.Tab.2.right\" timestamp=\"1606130744803\">\n      <screen x=\"0\" y=\"0\" width=\"1440\" height=\"900\" />\n    </state>\n    <state width=\"1398\" height=\"297\" key=\"GridCell.Tab.2.right/-1440.0.1440.900/0.0.1440.900@0.0.1440.900\" timestamp=\"1606130744803\" />\n    <state width=\"1398\" height=\"286\" key=\"GridCell.Tab.2.right/-1440.25.1440.875/0.25.1440.875@0.25.1440.875\" timestamp=\"1605946807969\" />\n    <state x=\"229\" y=\"86\" key=\"SettingsEditor\" timestamp=\"1605071435230\">\n      <screen x=\"0\" y=\"0\" width=\"1440\" height=\"900\" />\n    </state>\n    <state x=\"229\" y=\"86\" key=\"SettingsEditor/-1440.0.1440.900/0.0.1440.900@0.0.1440.900\" timestamp=\"1604227811052\" />\n    <state x=\"229\" y=\"86\" key=\"SettingsEditor/0.0.1440.900@0.0.1440.900\" timestamp=\"1605071435230\" />\n    <state x=\"422\" y=\"189\" width=\"595\" height=\"580\" key=\"find.popup\" timestamp=\"1606158086956\">\n      <screen x=\"0\" y=\"0\" width=\"1440\" height=\"900\" />\n    </state>\n    <state x=\"422\" y=\"189\" width=\"595\" height=\"580\" key=\"find.popup/-1440.0.1440.900/0.0.1440.900@0.0.1440.900\" timestamp=\"1606158086956\" />\n    <state x=\"385\" y=\"196\" width=\"670\" height=\"676\" key=\"search.everywhere.popup\" timestamp=\"1606236223520\">\n      <screen x=\"0\" y=\"0\" width=\"1440\" height=\"900\" />\n    </state>\n    <state x=\"385\" y=\"196\" width=\"670\" height=\"676\" key=\"search.everywhere.popup/-1440.0.1440.900/0.0.1440.900@0.0.1440.900\" timestamp=\"1606236223520\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision 5097056d8ac7c0b4402d0d7d5b6384c50f20a69e)
++++ .idea/workspace.xml	(date 1606300531372)
+@@ -23,22 +23,46 @@
+         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+       </path>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="GROUP_NODE:setup" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
+     </expand>
+     <select>
+       <path>
+         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+         <item name="GROUP_NODE:setup" type="e8cecc67:BranchNodeDescriptor" />
+-        <item name="BRANCH:setup/configs" type="e8cecc67:BranchNodeDescriptor" />
+       </path>
+     </select>
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="d94c5589-3348-44f4-9dfb-50efa0a4eca3" name="Default Changelist" comment="">
+-      <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
++    <list default="true" id="d94c5589-3348-44f4-9dfb-50efa0a4eca3" name="Default Changelist" comment="" />
++    <list id="0ad08d68-56ed-422e-a5ba-a4e55c2b2de4" name="a" comment="">
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Revert__coverage_and_test_config,_prod_tsconfig_]/shelved.patch" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Revert__coverage_and_test_config__prod_tsconfig__.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+     </list>
++    <list id="5254c325-63de-483a-8151-dae723c37bec" name="Revert &quot;coverage and test config, prod tsconfig&quot;" comment="Revert &quot;coverage and test config, prod tsconfig&quot;&#10;&#10;This reverts commit 594bc0b4">
++      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/routes/api/users/__test__/users.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/api/users/__test__/users.test.ts" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/routes/api/users/users.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/api/users/users.ts" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/tsconfig.production.json" beforeDir="false" />
++    </list>
++    <list id="b4d8028f-fe53-4e59-82c2-5d518b74ed88" name="Revert &quot;coverage and test config, prod tsconfig&quot;-2" comment="Revert &quot;coverage and test config, prod tsconfig&quot;&#10;&#10;This reverts commit 594bc0b4" />
++    <list id="f56c56bb-8ba0-435b-b073-073587bf0ce6" name="Revert &quot;env var for test&quot;" comment="">
++      <change beforePath="$PROJECT_DIR$/.env.test" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/bin/www" beforeDir="false" afterPath="$PROJECT_DIR$/src/bin/www" afterDir="false" />
++    </list>
++    <list id="c046271b-1a8e-451f-a1af-5957b00a9f6d" name="Revert &quot;jest config comment&quot;" comment="">
++      <change beforePath="$PROJECT_DIR$/jest.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/jest.config.js" afterDir="false" />
++    </list>
++    <list id="f0a7543d-c2bc-4486-9464-ba8d0b4e97b3" name="Revert &quot;Revert &quot;env var for test&quot;&quot;" comment="" />
++    <list id="0f88ff90-34c5-4fdf-ad04-faf073f690f7" name="Revert &quot;Revert &quot;Revert &quot;env var for test&quot;&quot;&quot;" comment="" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -144,6 +168,63 @@
+       <workItem from="1606134664481" duration="20130000" />
+       <workItem from="1606198243350" duration="2279000" />
+     </task>
++    <task id="LOCAL-00001" summary="Revert &quot;jest config comment&quot;&#10;&#10;This reverts commit dbff063d">
++      <created>1606299901145</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1606299901145</updated>
++    </task>
++    <task id="LOCAL-00002" summary="Revert &quot;coverage and test config, prod tsconfig&quot;&#10;&#10;This reverts commit 594bc0b4">
++      <created>1606299910588</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1606299910588</updated>
++    </task>
++    <task id="LOCAL-00003" summary="Revert &quot;env var for test&quot;&#10;&#10;This reverts commit 6db93e85">
++      <created>1606299918976</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1606299918976</updated>
++    </task>
++    <task id="LOCAL-00004" summary="Revert &quot;jest config comment&quot;&#10;&#10;This reverts commit dbff063d">
++      <created>1606300323094</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1606300323094</updated>
++    </task>
++    <task id="LOCAL-00005" summary="Revert &quot;coverage and test config, prod tsconfig&quot;&#10;&#10;This reverts commit 594bc0b4">
++      <created>1606300340389</created>
++      <option name="number" value="00005" />
++      <option name="presentableId" value="LOCAL-00005" />
++      <option name="project" value="LOCAL" />
++      <updated>1606300340389</updated>
++    </task>
++    <task id="LOCAL-00006" summary="Revert &quot;env var for test&quot;&#10;&#10;This reverts commit 6db93e85">
++      <created>1606300347404</created>
++      <option name="number" value="00006" />
++      <option name="presentableId" value="LOCAL-00006" />
++      <option name="project" value="LOCAL" />
++      <updated>1606300347404</updated>
++    </task>
++    <task id="LOCAL-00007" summary="Revert &quot;Revert &quot;env var for test&quot;&quot;&#10;&#10;This reverts commit 42580e4d">
++      <created>1606300399834</created>
++      <option name="number" value="00007" />
++      <option name="presentableId" value="LOCAL-00007" />
++      <option name="project" value="LOCAL" />
++      <updated>1606300399834</updated>
++    </task>
++    <task id="LOCAL-00008" summary="Revert &quot;Revert &quot;Revert &quot;env var for test&quot;&quot;&quot;&#10;&#10;This reverts commit ed275eff">
++      <created>1606300423811</created>
++      <option name="number" value="00008" />
++      <option name="presentableId" value="LOCAL-00008" />
++      <option name="project" value="LOCAL" />
++      <updated>1606300423811</updated>
++    </task>
++    <option name="localTasksCounter" value="9" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -167,24 +248,20 @@
+       <map>
+         <entry key="MAIN">
+           <value>
+-            <State>
+-              <option name="FILTERS">
+-                <map>
+-                  <entry key="branch">
+-                    <value>
+-                      <list>
+-                        <option value="setup/configs" />
+-                      </list>
+-                    </value>
+-                  </entry>
+-                </map>
+-              </option>
+-            </State>
++            <State />
+           </value>
+         </entry>
+       </map>
+     </option>
+     <option name="oldMeFiltersMigrated" value="true" />
++  </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="Revert &quot;jest config comment&quot;&#10;&#10;This reverts commit dbff063d" />
++    <MESSAGE value="Revert &quot;coverage and test config, prod tsconfig&quot;&#10;&#10;This reverts commit 594bc0b4" />
++    <MESSAGE value="Revert &quot;env var for test&quot;&#10;&#10;This reverts commit 6db93e85" />
++    <MESSAGE value="Revert &quot;Revert &quot;env var for test&quot;&quot;&#10;&#10;This reverts commit 42580e4d" />
++    <MESSAGE value="Revert &quot;Revert &quot;Revert &quot;env var for test&quot;&quot;&quot;&#10;&#10;This reverts commit ed275eff" />
++    <option name="LAST_COMMIT_MESSAGE" value="Revert &quot;Revert &quot;Revert &quot;env var for test&quot;&quot;&quot;&#10;&#10;This reverts commit ed275eff" />
+   </component>
+   <component name="WindowStateProjectService">
+     <state x="528" y="272" key="#Usage_Scope" timestamp="1603396929802">
+@@ -195,6 +272,10 @@
+       <screen x="0" y="0" width="1440" height="900" />
+     </state>
+     <state x="457" y="247" key="#com.intellij.fileTypes.FileTypeChooser/-1440.0.1440.900/0.0.1440.900@0.0.1440.900" timestamp="1606051911018" />
++    <state x="271" y="0" key="CommitChangelistDialog2" timestamp="1606300422866">
++      <screen x="0" y="0" width="1440" height="900" />
++    </state>
++    <state x="271" y="0" key="CommitChangelistDialog2/-1440.0.1440.900/0.0.1440.900@0.0.1440.900" timestamp="1606300422866" />
+     <state width="1398" height="297" key="GridCell.Tab.0.bottom" timestamp="1606130744797">
+       <screen x="0" y="0" width="1440" height="900" />
+     </state>
+@@ -255,11 +336,23 @@
+     </state>
+     <state width="1398" height="297" key="GridCell.Tab.2.right/-1440.0.1440.900/0.0.1440.900@0.0.1440.900" timestamp="1606130744803" />
+     <state width="1398" height="286" key="GridCell.Tab.2.right/-1440.25.1440.875/0.25.1440.875@0.25.1440.875" timestamp="1605946807969" />
++    <state x="144" y="76" key="MergeDialog" timestamp="1606299976866">
++      <screen x="0" y="0" width="1440" height="900" />
++    </state>
++    <state x="144" y="76" key="MergeDialog/-1440.0.1440.900/0.0.1440.900@0.0.1440.900" timestamp="1606299976866" />
++    <state x="353" y="208" key="MultipleFileMergeDialog" timestamp="1606300343814">
++      <screen x="0" y="0" width="1440" height="900" />
++    </state>
++    <state x="353" y="208" key="MultipleFileMergeDialog/-1440.0.1440.900/0.0.1440.900@0.0.1440.900" timestamp="1606300343814" />
+     <state x="229" y="86" key="SettingsEditor" timestamp="1605071435230">
+       <screen x="0" y="0" width="1440" height="900" />
+     </state>
+     <state x="229" y="86" key="SettingsEditor/-1440.0.1440.900/0.0.1440.900@0.0.1440.900" timestamp="1604227811052" />
+     <state x="229" y="86" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1605071435230" />
++    <state x="572" y="363" key="VCS.ChangelistChooser" timestamp="1606300448459">
++      <screen x="0" y="0" width="1440" height="900" />
++    </state>
++    <state x="572" y="363" key="VCS.ChangelistChooser/-1440.0.1440.900/0.0.1440.900@0.0.1440.900" timestamp="1606300448459" />
+     <state x="422" y="189" width="595" height="580" key="find.popup" timestamp="1606158086956">
+       <screen x="0" y="0" width="1440" height="900" />
+     </state>
+Index: .idea/shelf/Uncommitted_changes_before_rebase__Revert__coverage_and_test_config__prod_tsconfig__.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/shelf/Uncommitted_changes_before_rebase__Revert__coverage_and_test_config__prod_tsconfig__.xml	(date 1606300054445)
++++ .idea/shelf/Uncommitted_changes_before_rebase__Revert__coverage_and_test_config__prod_tsconfig__.xml	(date 1606300054445)
+@@ -0,0 +1,4 @@
++<changelist name="Uncommitted_changes_before_rebase_[Revert__coverage_and_test_config,_prod_tsconfig_]" date="1606299976875" recycled="true" deleted="true">
++  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Revert__coverage_and_test_config,_prod_tsconfig_]/shelved.patch" />
++  <option name="DESCRIPTION" value="Uncommitted changes before rebase [Revert &quot;coverage and test config, prod tsconfig&quot;]" />
++</changelist>
+\ No newline at end of file

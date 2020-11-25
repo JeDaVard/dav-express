@@ -3,7 +3,7 @@ import { MongoMemoryServer } from 'mongodb-memory-server';
 import mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
 
-dotenv.config();
+dotenv.config({ path: './.env.test' });
 
 // DO NOT UNCOMMENT THIS WITHOUT A DEEP INVESTIGATION
 // jest.mock('@kuber-ticket/micro-events')

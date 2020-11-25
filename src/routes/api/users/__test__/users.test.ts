@@ -47,6 +47,23 @@ describe('User Sign-In', () => {
             })
             .expect(400);
     });
+
+    it('returns 400 when sign in with wrong password', async () => {
+        await request(app)
+            .post('/api/users/sign-up')
+            .send({
+                email: 'a@a.com',
+                password: 'aaaaaa1',
+            })
+            .expect(201);
+        return request(app)
+            .post('/api/users/sign-in')
+            .send({
+                email: 'a@a.com',
+                password: 'aaaaaa2',
+            })
+            .expect(400);
+    });
 });
 
 describe('User Sign-up', () => {

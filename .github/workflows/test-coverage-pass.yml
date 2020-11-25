@@ -1,0 +1,57 @@
+name: test-coverage
+
+on:
+  push:
+    branches: [ main ]
+  #    path:
+  #      - 'auth/**'
+  pull_request:
+    branches: [ main ]
+#    path:
+#      - 'auth/**'
+
+jobs:
+  test:
+    name: Test coverage and the badge
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: actions/checkout@v2
+
+      - name: Updating Test Passing Badge To Failed
+        uses: schneegans/dynamic-badges-action@v1.0.0
+        with:
+          auth: ${{ secrets.COVERAGE_BUDGE }}
+          gistID: cf394ed0edc2f4dd2f1d692cedd26a77
+          filename: dav-express-test-pass-badge.json
+          label: Tests
+          message: failed
+          color: critical
+
+      - name: Setup Node.js environment and Test coverage
+        run: npm install && npm run test:cover
+
+      - name: Updating Coverage Badge
+        uses: schneegans/dynamic-badges-action@v1.0.0
+        with:
+          auth: ${{ secrets.COVERAGE_BUDGE }}
+          gistID: 8538c4d06e5772f17bf3d6ee9f32c211
+          filename: dav-express-coverage.json
+          label: Coverage
+          message: ${{ env.GH_COVERAGE }}%
+          - if: env.GH_COVERAGE >= 50
+            color: green
+          - if: env.GH_COVERAGE >= 80
+            color: yellowgreen
+
+      - name: Updating Test Passing Badge To Passed
+        uses: schneegans/dynamic-badges-action@v1.0.0
+        with:
+          auth: ${{ secrets.COVERAGE_BUDGE }}
+          gistID: cf394ed0edc2f4dd2f1d692cedd26a77
+          filename: dav-express-test-pass-badge.json
+          label: Tests
+          message: passing
+          color: brightgreen

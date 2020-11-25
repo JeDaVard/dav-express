@@ -21,11 +21,18 @@ module.exports = {
     reporters: ['default', './tools/coverage-total-reporter.js'],
     coverageThreshold: {
         src: {
-            branches: 85,
+            branches: 60,
             functions: 90,
             lines: 90,
             statements: 90,
         },
+        // "src/utils/*.ts": {
+        //     statements: 50,
+        //     branches: 50,
+        //     functions: 50,
+        //     lines: 50
+        // }
     },
-    coveragePathIgnorePatterns: ['./src/middlewares/error/validationError.*.ts'],
+    coveragePathIgnorePatterns: ['./src/middlewares/error/validationError.*.ts', './src/utils/'],
+    // testPathIgnorePatterns: []
 };

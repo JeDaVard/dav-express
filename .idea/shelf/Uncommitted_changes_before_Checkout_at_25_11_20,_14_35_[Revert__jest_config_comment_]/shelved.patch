@@ -1,0 +1,30 @@
+Index: jest.config.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>module.exports = {\n    transform: {\n        '^.+\\\\.ts?$': 'ts-jest',\n    },\n    testEnvironment: 'node',\n    testRegex: '\\\\.(spec|test)\\\\.ts?$',\n    moduleFileExtensions: ['js', 'ts'],\n    modulePaths: ['<rootDir>/src/'],\n    setupFilesAfterEnv: ['<rootDir>/jest.config.js', './src/test/setup.ts'],\n    clearMocks: true,\n    forceExit: true,\n    collectCoverageFrom: [\n        'src/**/*.ts',\n        '!src/app.ts',\n        '!src/routes/**/*.ts',\n        '!src/config/params/*.ts',\n        '!src/config/environment/schemas/*.ts',\n    ],\n    coverageDirectory: '<rootDir>/coverage',\n    coverageReporters: ['lcov', 'text', 'text-summary'],\n    reporters: ['default', './tools/coverage-total-reporter.js'],\n    coverageThreshold: {\n        src: {\n            branches: 60,\n            functions: 90,\n            lines: 90,\n            statements: 90,\n        },\n        // \"src/utils/*.ts\": {\n        //     statements: 50,\n        //     branches: 50,\n        //     functions: 50,\n        //     lines: 50\n        // }\n    },\n    coveragePathIgnorePatterns: ['./src/middlewares/error/validationError.*.ts', './src/utils/'],\n    // testPathIgnorePatterns: []\n};\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- jest.config.js	(revision 5097056d8ac7c0b4402d0d7d5b6384c50f20a69e)
++++ jest.config.js	(date 1606300323448)
+@@ -21,18 +21,11 @@
+     reporters: ['default', './tools/coverage-total-reporter.js'],
+     coverageThreshold: {
+         src: {
+-            branches: 60,
++            branches: 85,
+             functions: 90,
+             lines: 90,
+             statements: 90,
+         },
+-        // "src/utils/*.ts": {
+-        //     statements: 50,
+-        //     branches: 50,
+-        //     functions: 50,
+-        //     lines: 50
+-        // }
+     },
+-    coveragePathIgnorePatterns: ['./src/middlewares/error/validationError.*.ts', './src/utils/'],
+-    // testPathIgnorePatterns: []
++    coveragePathIgnorePatterns: ['./src/middlewares/error/validationError.*.ts'],
+ };

@@ -4,5 +4,6 @@
 /coverage
 npm-debug.log
 docker-compose*.yml
+.eslintcache
 *.env
 *.env.development
