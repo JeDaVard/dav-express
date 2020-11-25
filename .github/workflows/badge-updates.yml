@@ -47,7 +47,7 @@ jobs:
           filename: dav-express-pure-src-lines.json
           label: Source
           message: ${{ env.SOURCE_LINES }} lines
-          color: 9cf
+          color: ff69b4
 
       - name: Updating Config lines counter
         uses: schneegans/dynamic-badges-action@v1.0.0
@@ -57,4 +57,4 @@ jobs:
           filename: dav-express-config-line-count.json
           label: Configs
           message: ${{ env.CONFIG_LINES }} lines
-          color: ff69b4
+          color: 9cf
