@@ -37,7 +37,13 @@ jobs:
         run: echo "NODE_VER_VAR=$(node -v)" >> $GITHUB_ENV
 
       - name: Console node version variable
-        run: echo ${{ NODE_VER_VAR }}
+        run: echo ${{ env.NODE_VER_VAR }}
+
+      - name: Set lines as var
+        run: echo "LINES_VAR=$(git ls-files -- . ':!:.idea' ':!:*.json' ':!:*.md' | xargs cat | wc -l)" >> $GITHUB_ENV
+
+      - name: Console lines var
+        run: echo ${{ env.LINES_VAR }}
 
       - name: Set coverage badge color
         if: env.GH_COVERAGE < 40

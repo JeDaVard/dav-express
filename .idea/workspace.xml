@@ -15,7 +15,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d94c5589-3348-44f4-9dfb-50efa0a4eca3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.github/workflows/test-coverage-pass.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/test-coverage-pass.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <list id="f2115c66-1c46-416a-9d03-51b7dd938030" name="badge test" comment="" />
     <list id="ee4925dd-5d78-4280-bd56-6142805d2804" name="cov badge percent" comment="" />
