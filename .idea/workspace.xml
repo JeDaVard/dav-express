@@ -13,7 +13,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d94c5589-3348-44f4-9dfb-50efa0a4eca3" name="Default Changelist" comment="" />
+    <list default="true" id="d94c5589-3348-44f4-9dfb-50efa0a4eca3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/environment/index.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/environment/index.test.ts" afterDir="false" />
+    </list>
     <list id="f2115c66-1c46-416a-9d03-51b7dd938030" name="badge test" comment="" />
     <list id="ee4925dd-5d78-4280-bd56-6142805d2804" name="cov badge percent" comment="" />
     <list id="72d746f8-390d-409d-9c99-aed8cbba7d65" name="coverage and test config, prod tsconfig" comment="" />
@@ -128,6 +131,7 @@
       <workItem from="1606121872711" duration="9799000" />
       <workItem from="1606134664481" duration="20130000" />
       <workItem from="1606198243350" duration="2279000" />
+      <workItem from="1606340162764" duration="1511000" />
     </task>
     <servers />
   </component>

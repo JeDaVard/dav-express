@@ -1,4 +1,8 @@
 describe('Environment variables', () => {
+    let initEnv = process.env.NODE_ENV;
+    beforeEach(() => {
+        process.env.NODE_ENV = initEnv;
+    });
     afterEach(() => {
         jest.resetModules();
         jest.clearAllMocks();
@@ -32,23 +36,12 @@ describe('Environment variables', () => {
     });
 
     it('finds the correct dev env variable', async () => {
-        const initEnv = process.env.NODE_ENV;
         const dev = (process.env.NODE_ENV = 'development');
 
         const { env: envDev } = require('config/environment');
 
         expect(envDev.NODE_ENV).toEqual(dev);
-        process.env.NODE_ENV = initEnv;
-    });
-
-    it('throws an error if PORT is missing on prod env', async () => {
-        const initEnv = process.env.NODE_ENV;
-        process.env.NODE_ENV = 'production';
-
-        expect(() => {
-            require('config/environment');
-        }).toThrowError('PORT');
-        process.env.NODE_ENV = initEnv;
+        // process.env.PORT = '';
     });
 
     it('Throws an error if a variable is missing', async () => {
