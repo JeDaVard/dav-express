@@ -35,8 +35,8 @@ jobs:
           auth: ${{ secrets.COVERAGE_BUDGE }}
           gistID: 8e956dd9f3809db71fe6924de220946a
           filename: dav-express-total-lines.json
-          label: Tests
-          message: ${{ env.TOTAL_LINES }}
+          label: Total
+          message: ${{ env.TOTAL_LINES }} lines
           color: blue
 
       - name: Updating Pure Source lines counter
@@ -45,9 +45,9 @@ jobs:
           auth: ${{ secrets.COVERAGE_BUDGE }}
           gistID: cb9395f504314fde235022d95d90a2aa
           filename: dav-express-pure-src-lines.json
-          label: Tests
-          message: ${{ env.SOURCE_LINES }}
-          color: blueviolet
+          label: Source
+          message: ${{ env.SOURCE_LINES }} lines
+          color: 9cf
 
       - name: Updating Config lines counter
         uses: schneegans/dynamic-badges-action@v1.0.0
@@ -55,6 +55,6 @@ jobs:
           auth: ${{ secrets.COVERAGE_BUDGE }}
           gistID: 41fab36221f2950bf4e1ed1cfb3a87e1
           filename: dav-express-config-line-count.json
-          label: Tests
-          message: ${{ env.CONFIG_LINES }}
-          color: lightgrey
+          label: Configs
+          message: ${{ env.CONFIG_LINES }} lines
+          color: ff69b4

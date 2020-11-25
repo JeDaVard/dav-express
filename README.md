@@ -1,12 +1,15 @@
 ## Description
 
+Welcome 👋
+
+👉
 ![lines-total](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/jedavard/8e956dd9f3809db71fe6924de220946a/raw/dav-express-total-lines.json)
 ![lines-source](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/jedavard/cb9395f504314fde235022d95d90a2aa/raw/dav-express-pure-src-lines.json)
 ![lines-config](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/jedavard/41fab36221f2950bf4e1ed1cfb3a87e1/raw/dav-express-config-line-count.json)
 ![test-status](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/jedavard/cf394ed0edc2f4dd2f1d692cedd26a77/raw/dav-express-test-pass-badge.json)
 ![coverage](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/jedavard/8538c4d06e5772f17bf3d6ee9f32c211/raw/dav-express-coverage.json)
 
-Desc
+👌 Ultimate template for a Node.js project startup 👩‍💻🧑‍💻👨‍💻
 
 ## Quick Start
 
