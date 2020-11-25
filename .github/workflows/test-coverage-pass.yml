@@ -33,17 +33,27 @@ jobs:
       - name: Setup Node.js environment and Test coverage
         run: npm install && npm run test:cover
 
-      - name: Set coverage badge color
-        if: env.GH_COVERAGE < 50
-        run: echo "::set-env name=GH_COVERAGE_COLOR::red"
+      - name: Set node version as variable
+        run: echo "NODE_VER_VAR=$(node -v)" >> $GITHUB_ENV
+
+      - name: Console node version variable
+        run: echo ${{ NODE_VER_VAR }}
 
       - name: Set coverage badge color
-        if: env.GH_COVERAGE >= 50 && env.GH_COVERAGE < 80
-        run: echo "::set-env name=GH_COVERAGE_COLOR::brightgreen"
+        if: env.GH_COVERAGE < 40
+        run: echo "GH_COVERAGE_COLOR=red" >> $GITHUB_ENV
+
+      - name: Set coverage badge color
+        if: env.GH_COVERAGE >= 40 && env.GH_COVERAGE < 60
+        run: echo "GH_COVERAGE_COLOR=orange" >> $GITHUB_ENV
+
+      - name: Set coverage badge color
+        if: env.GH_COVERAGE >= 60 && env.GH_COVERAGE < 80
+        run: echo "GH_COVERAGE_COLOR=green" >> $GITHUB_ENV
 
       - name: Set coverage badge color
         if: env.GH_COVERAGE >= 80
-        run: echo "::set-env name=GH_COVERAGE_COLOR::yellowgreen"
+        run: echo "GH_COVERAGE_COLOR=blue" >> $GITHUB_ENV
 
       - name: Updating Coverage Badge
         uses: schneegans/dynamic-badges-action@v1.0.0
