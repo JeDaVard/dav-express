@@ -3,6 +3,7 @@ import { User } from 'models/user';
 import { BadRequestError, DatabaseConnectionError } from 'libs/errors';
 import { Password } from 'libs/passwords';
 import jwt from 'jsonwebtoken';
+import { env } from 'config/environment';
 import { response } from 'utils';
 
 export const currentUser = async (req: Request, res: Response) => {
@@ -19,11 +20,7 @@ export const signIn = async (req: Request, res: Response) => {
     const passwordsMatch = await Password.compare(existingUser.password, password);
     if (!passwordsMatch) throw new BadRequestError('Invalid password');
 
-    const token = jwt.sign(
-        { id: existingUser.id, email: existingUser.email },
-        process.env.JWT_SECRET!,
-        {},
-    );
+    const token = jwt.sign({ id: existingUser.id, email: existingUser.email }, env.jwtSecret, {});
 
     req.session = { jwt: token };
 
@@ -40,7 +37,7 @@ export const signUp = async (req: Request, res: Response) => {
     const user = User.build({ email, password });
     await user.save();
 
-    const token = jwt.sign({ id: user.id, email: user.email }, process.env.JWT_SECRET!, {});
+    const token = jwt.sign({ id: user.id, email: user.email }, env.jwtSecret, {});
 
     req.session = { jwt: token };
 

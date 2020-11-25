@@ -1,5 +1,6 @@
 import request, { SuperTest, Test } from 'supertest';
 import { app } from 'app';
+import { env } from 'config/environment';
 
 describe('Service API Routes', () => {
     let server: SuperTest<Test>;
@@ -8,9 +9,9 @@ describe('Service API Routes', () => {
         server = request(app);
     });
 
-    describe(`GET /${process.env.BASE_API_URL}/health`, () => {
+    describe(`GET /${env.apiVersionUrl}/health`, () => {
         test('should return status message', async () => {
-            const response = await server.get(`/${process.env.BASE_API_URL}/health`);
+            const response = await server.get(`/${env.apiVersionUrl}/health`);
 
             expect(response.status).toBe(200);
             expect(response.type).toBe('application/json');
