@@ -25,13 +25,13 @@ describe('Environment variables', () => {
         expect(typeof Object.values(env)[0]).toEqual('string');
     });
 
-    it('finds the correct variable', async () => {
+    it('finds the correct NODE_ENV variable', async () => {
         const { env } = require('config/environment');
         expect(env.NODE_ENV).toBeDefined();
         expect(env.NODE_ENV).toEqual(process.env.NODE_ENV);
     });
 
-    it('finds the correct variable', async () => {
+    it('finds the correct dev env variable', async () => {
         const initEnv = process.env.NODE_ENV;
         const dev = (process.env.NODE_ENV = 'development');
 
@@ -41,13 +41,13 @@ describe('Environment variables', () => {
         process.env.NODE_ENV = initEnv;
     });
 
-    it('finds the correct variable', async () => {
+    it('throws an error if PORT is missing on prod env', async () => {
         const initEnv = process.env.NODE_ENV;
-        const prod = (process.env.NODE_ENV = 'production');
+        process.env.NODE_ENV = 'production';
 
-        const { env } = require('config/environment');
-
-        expect(env.NODE_ENV).toEqual(prod);
+        expect(() => {
+            require('config/environment');
+        }).toThrowError('PORT');
         process.env.NODE_ENV = initEnv;
     });
 
