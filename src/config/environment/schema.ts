@@ -13,6 +13,8 @@ const envSchema = {
     test: Joi.object({
         API_VERSION_URL: Joi.string().required(),
         MONGO_URI: Joi.string().required(),
+        MONGO_LINK: Joi.string(),
+        MONGO_DB_NAME: Joi.string(),
         JWT_SECRET: Joi.string().required(),
     })
         .unknown()
