@@ -4,13 +4,17 @@ import { env } from 'config/environment';
 
 describe('User Sign-In', () => {
     it('returns 200 and set cookie after successful sign in', async () => {
-        await request(app)
-            .post(`/${env.API_VERSION_URL}/users/sign-up`)
-            .send({
-                email: 'test@test.com',
-                password: 'aaaaaa',
-            })
-            .expect(201);
+        try {
+            await request(app)
+                .post(`/${env.API_VERSION_URL}/users/sign-up`)
+                .send({
+                    email: 'test@test.com',
+                    password: 'aaaaaa',
+                })
+                .expect(201);
+        } catch (e) {
+            throw new Error(e);
+        }
         const response = await request(app)
             .post(`/${env.API_VERSION_URL}/users/sign-in`)
             .send({

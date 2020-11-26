@@ -7,3 +7,4 @@ docker-compose*.yml
 .eslintcache
 *.env
 *.env.development
+*.env.test
