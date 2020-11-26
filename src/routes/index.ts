@@ -8,7 +8,7 @@ const router = Router();
 
 router.use(currentUser);
 
-router.use(`/${env.apiVersionUrl}`, apis);
+router.use(`/${env.API_VERSION_URL}`, apis);
 
 router.use('*', async () => {
     throw new NotFoundError();

@@ -46,7 +46,7 @@ describe('Environment variables', () => {
 
     it('Throws an error if a variable is missing', async () => {
         const { envVars } = require('config/environment/variables');
-        const varNameKey = 'apiVersionUrl';
+        const varNameKey = 'API_VERSION_URL';
         // eslint-disable-next-line
         delete envVars[varNameKey];
 

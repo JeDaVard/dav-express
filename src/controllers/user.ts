@@ -20,7 +20,7 @@ export const signIn = async (req: Request, res: Response) => {
     const passwordsMatch = await Password.compare(existingUser.password, password);
     if (!passwordsMatch) throw new BadRequestError('Invalid password');
 
-    const token = jwt.sign({ id: existingUser.id, email: existingUser.email }, env.jwtSecret, {});
+    const token = jwt.sign({ id: existingUser.id, email: existingUser.email }, env.JWT_SECRET, {});
 
     req.session = { jwt: token };
 
@@ -37,7 +37,7 @@ export const signUp = async (req: Request, res: Response) => {
     const user = User.build({ email, password });
     await user.save();
 
-    const token = jwt.sign({ id: user.id, email: user.email }, env.jwtSecret, {});
+    const token = jwt.sign({ id: user.id, email: user.email }, env.JWT_SECRET, {});
 
     req.session = { jwt: token };
 
