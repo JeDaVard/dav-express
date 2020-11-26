@@ -5,16 +5,16 @@ import { env } from 'config/environment';
 describe('User Sign-In', () => {
     it('returns 200 and set cookie after successful sign in', async () => {
         await request(app)
-            .post(`/${env.apiVersionUrl}/users/sign-up`)
+            .post(`/${env.API_VERSION_URL}/users/sign-up`)
             .send({
-                email: 'a@a.com',
+                email: 'test@test.com',
                 password: 'aaaaaa',
             })
             .expect(201);
         const response = await request(app)
-            .post(`/${env.apiVersionUrl}/users/sign-in`)
+            .post(`/${env.API_VERSION_URL}/users/sign-in`)
             .send({
-                email: 'a@a.com',
+                email: 'test@test.com',
                 password: 'aaaaaa',
             })
             .expect(200);
@@ -24,16 +24,16 @@ describe('User Sign-In', () => {
 
     it('returns 400 if missing email or password', async () => {
         await request(app)
-            .post(`/${env.apiVersionUrl}/users/sign-in`)
+            .post(`/${env.API_VERSION_URL}/users/sign-in`)
             .send({
                 email: '',
                 password: 'aaaaaa',
             })
             .expect(400);
         await request(app)
-            .post(`/${env.apiVersionUrl}/users/sign-in`)
+            .post(`/${env.API_VERSION_URL}/users/sign-in`)
             .send({
-                email: 'a@a.com',
+                email: 'test@test.com',
                 password: '',
             })
             .expect(400);
@@ -41,9 +41,9 @@ describe('User Sign-In', () => {
 
     it('returns 400 when sign in without sign up', async () => {
         return request(app)
-            .post(`/${env.apiVersionUrl}/users/sign-in`)
+            .post(`/${env.API_VERSION_URL}/users/sign-in`)
             .send({
-                email: 'a@a.com',
+                email: 'test@test.com',
                 password: 'aaaaaa',
             })
             .expect(400);
@@ -51,16 +51,16 @@ describe('User Sign-In', () => {
 
     it('returns 400 when sign in with wrong password', async () => {
         await request(app)
-            .post(`/${env.apiVersionUrl}/users/sign-up`)
+            .post(`/${env.API_VERSION_URL}/users/sign-up`)
             .send({
-                email: 'a@a.com',
+                email: 'test@test.com',
                 password: 'aaaaaa1',
             })
             .expect(201);
         return request(app)
-            .post(`/${env.apiVersionUrl}/users/sign-in`)
+            .post(`/${env.API_VERSION_URL}/users/sign-in`)
             .send({
-                email: 'a@a.com',
+                email: 'test@test.com',
                 password: 'aaaaaa2',
             })
             .expect(400);
@@ -70,9 +70,9 @@ describe('User Sign-In', () => {
 describe('User Sign-up', () => {
     it('returns a 201 on successful sign up', async () => {
         return request(app)
-            .post(`/${env.apiVersionUrl}/users/sign-up`)
+            .post(`/${env.API_VERSION_URL}/users/sign-up`)
             .send({
-                email: 'a@a.com',
+                email: 'test@test.com',
                 password: 'aaaaaa',
             })
             .expect(201);
@@ -80,7 +80,7 @@ describe('User Sign-up', () => {
 
     it('returns a 400 with an invalid email', async () => {
         return request(app)
-            .post(`/${env.apiVersionUrl}/users/sign-up`)
+            .post(`/${env.API_VERSION_URL}/users/sign-up`)
             .send({
                 email: 'invalidEmail',
                 password: 'aaaaaa',
@@ -90,9 +90,9 @@ describe('User Sign-up', () => {
 
     it('returns a 400 with an invalid password', async () => {
         return request(app)
-            .post(`/${env.apiVersionUrl}/users/sign-up`)
+            .post(`/${env.API_VERSION_URL}/users/sign-up`)
             .send({
-                email: 'a@a.com',
+                email: 'test@test.com',
                 password: 'a',
             })
             .expect(400);
@@ -100,14 +100,14 @@ describe('User Sign-up', () => {
 
     it('returns a 400 when missing email or password', async () => {
         await request(app)
-            .post(`/${env.apiVersionUrl}/users/sign-up`)
+            .post(`/${env.API_VERSION_URL}/users/sign-up`)
             .send({
-                email: 'a@a.com',
+                email: 'test@test.com',
             })
             .expect(400);
 
         await request(app)
-            .post(`/${env.apiVersionUrl}/users/sign-up`)
+            .post(`/${env.API_VERSION_URL}/users/sign-up`)
             .send({
                 password: 'aaaaaa',
             })
@@ -116,17 +116,17 @@ describe('User Sign-up', () => {
 
     it('returns a 400 when use existing email to sign-up', async () => {
         await request(app)
-            .post(`/${env.apiVersionUrl}/users/sign-up`)
+            .post(`/${env.API_VERSION_URL}/users/sign-up`)
             .send({
-                email: 'a@a.com',
+                email: 'test@test.com',
                 password: 'aaaaaa',
             })
             .expect(201);
 
         await request(app)
-            .post(`/${env.apiVersionUrl}/users/sign-up`)
+            .post(`/${env.API_VERSION_URL}/users/sign-up`)
             .send({
-                email: 'a@a.com',
+                email: 'test@test.com',
                 password: 'aaaaaa',
             })
             .expect(400);
@@ -134,9 +134,9 @@ describe('User Sign-up', () => {
 
     it('sets a cookie after a successful sign-up', async () => {
         const response = await request(app)
-            .post(`/${env.apiVersionUrl}/users/sign-up`)
+            .post(`/${env.API_VERSION_URL}/users/sign-up`)
             .send({
-                email: 'a@a.com',
+                email: 'test@test.com',
                 password: 'aaaaaa',
             })
             .expect(201);
@@ -151,7 +151,7 @@ describe('Current user route', () => {
         const user = global.signUpAndCookie(email);
 
         let response = await request(app)
-            .get(`/${env.apiVersionUrl}/users/me`)
+            .get(`/${env.API_VERSION_URL}/users/me`)
             .set('Cookie', user.cookies)
             .send()
             .expect(200);
@@ -160,20 +160,23 @@ describe('Current user route', () => {
     });
 
     it("returns current user's details", async () => {
-        let response = await request(app).get(`/${env.apiVersionUrl}/users/me`).send().expect(200);
+        let response = await request(app)
+            .get(`/${env.API_VERSION_URL}/users/me`)
+            .send()
+            .expect(200);
         expect(response.body.data.currentUser).toBeNull();
     });
 });
 
 describe('User sign-out route', () => {
     it('returns 200 and invalidate the cookie after successful sign out', async () => {
-        await request(app).post(`/${env.apiVersionUrl}/users/sign-up`).send({
-            email: 'a@a.com',
+        await request(app).post(`/${env.API_VERSION_URL}/users/sign-up`).send({
+            email: 'test@test.com',
             password: 'aaaaaa',
         });
 
         const response = await request(app)
-            .post(`/${env.apiVersionUrl}/users/sign-out`)
+            .post(`/${env.API_VERSION_URL}/users/sign-out`)
             .expect(200);
 
         expect(response.get('Set-Cookie')[0]).toEqual(

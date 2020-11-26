@@ -1,5 +1,4 @@
 import { env } from 'config/environment';
-import { MongoMemoryServer } from 'mongodb-memory-server';
 import mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
 
@@ -19,17 +18,17 @@ declare global {
 }
 /* eslint-enable */
 
-let mongo: MongoMemoryServer;
+// let mongo: any;
 beforeAll(async () => {
-    env.jwtSecret = 'some-test-secret';
-    mongo = new MongoMemoryServer();
-    const mongoUri = await mongo.getUri();
-
-    await mongoose.connect(mongoUri, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        useCreateIndex: true,
-    });
+    try {
+        await mongoose.connect(env.MONGO_URI, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            useCreateIndex: true,
+        });
+    } catch (e) {
+        console.error('[MongoDB] Error while connecting');
+    }
 });
 
 beforeEach(async () => {
@@ -41,7 +40,11 @@ beforeEach(async () => {
 });
 
 afterAll(async () => {
-    await mongo.stop();
+    const collections = await mongoose.connection.db.collections();
+
+    for (let collection of collections) {
+        await collection.deleteMany({});
+    }
     await mongoose.connection.close();
 });
 
@@ -52,7 +55,7 @@ global.signUpAndCookie = (email, id) => {
         email: email || 'text@example.com',
     };
     // Sign a token
-    const token = jwt.sign(payload, env.jwtSecret);
+    const token = jwt.sign(payload, env.JWT_SECRET);
     // Create a session object
     const session = { jwt: token };
     const sessionJson = JSON.stringify(session);

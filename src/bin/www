@@ -18,7 +18,7 @@ const server = http.createServer(app);
 (async function () {
 	try {
 		// Connect to DB
-		await mongoose.connect(env.mongoUri, {
+		await mongoose.connect(env.MONGO_URI, {
 		    useNewUrlParser: true,
 		    useCreateIndex: true,
 		    useUnifiedTopology: true,
