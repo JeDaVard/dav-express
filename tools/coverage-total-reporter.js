@@ -50,6 +50,7 @@ class CoverageTotalReporter {
         console.log(
             '================================================================================',
         );
+
         if (process.env.CI && process.env.GITHUB_WORKFLOW) {
             this.execSync(`echo "GH_COVERAGE=${coverage}" >> $GITHUB_ENV`);
         }
