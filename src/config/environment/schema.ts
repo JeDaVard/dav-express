@@ -7,6 +7,12 @@ const envSchema = {
         MONGO_URI: Joi.string().required(),
         JWT_SECRET: Joi.string().required(),
         PORT: Joi.string().default(5000),
+        PG_HOST: Joi.string(),
+        PG_PORT: Joi.string(),
+        PG_DATABASE: Joi.string(),
+        PG_USER: Joi.string(),
+        PG_PASSWORD: Joi.string(),
+        PG_LOGGING: Joi.string(),
     })
         .unknown()
         .required(),
@@ -16,6 +22,12 @@ const envSchema = {
         MONGO_LINK: Joi.string(),
         MONGO_DB_NAME: Joi.string(),
         JWT_SECRET: Joi.string().required(),
+        PG_HOST: Joi.string(),
+        PG_PORT: Joi.string(),
+        PG_DATABASE: Joi.string(),
+        PG_USER: Joi.string(),
+        PG_PASSWORD: Joi.string(),
+        PG_LOGGING: Joi.string(),
     })
         .unknown()
         .required(),
@@ -24,6 +36,12 @@ const envSchema = {
         MONGO_URI: Joi.string().required(),
         JWT_SECRET: Joi.string().required(),
         PORT: Joi.string().required(),
+        PG_HOST: Joi.string(),
+        PG_PORT: Joi.string(),
+        PG_DATABASE: Joi.string(),
+        PG_USER: Joi.string(),
+        PG_PASSWORD: Joi.string(),
+        PG_LOGGING: Joi.string(),
     })
         .unknown()
         .required(),
@@ -32,6 +50,12 @@ const envSchema = {
         MONGO_URI: Joi.string().required(),
         JWT_SECRET: Joi.string().required(),
         PORT: Joi.string().required(),
+        PG_HOST: Joi.string(),
+        PG_PORT: Joi.string(),
+        PG_DATABASE: Joi.string(),
+        PG_USER: Joi.string(),
+        PG_PASSWORD: Joi.string(),
+        PG_LOGGING: Joi.string(),
     })
         .unknown()
         .required(),
