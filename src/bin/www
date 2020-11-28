@@ -1,7 +1,7 @@
-
 const { env } = require('config/environment')
-const mongoose = require('mongoose');
 const http = require('http');
+const mongoose = require('mongoose');
+const { client } = require('components/db')
 
 const { app } = require('app');
 
@@ -23,7 +23,11 @@ const server = http.createServer(app);
 		    useCreateIndex: true,
 		    useUnifiedTopology: true,
 		})
-		console.log('[Node Process] Ticket mongodb is connected...')
+		console.log('[Node Process] MongoDB is connected...')
+
+		await client.authenticate()
+		await client.sync()
+		console.log('[Node Process] PostgreSQL is connected...')
 	} catch (e) {
 		console.error(e);
 		process.exit();

@@ -7,7 +7,7 @@ interface UserAttrs {
     password: string;
 }
 
-// Interface that describes the properties that a User model, including static methods
+// Interface that describes the properties that a User model has, including static methods
 interface UserModel extends mongoose.Model<UserDocument> {
     build(attrs: UserAttrs): UserDocument;
 }
