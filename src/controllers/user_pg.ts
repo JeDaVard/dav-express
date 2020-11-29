@@ -18,6 +18,7 @@ export const signIn = async (req: Request, res: Response) => {
     if (!existingUser) throw new BadRequestError("User doesn't exist");
 
     const passwordsMatch = await Password.compare(existingUser.password, password);
+
     if (!passwordsMatch) throw new BadRequestError('Invalid password');
 
     const token = jwt.sign({ id: existingUser.id, email: existingUser.email }, env.JWT_SECRET, {});

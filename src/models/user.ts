@@ -1,4 +1,5 @@
 import { Sequelize, Model, DataTypes, Optional } from 'sequelize';
+import { Password } from '../libs/passwords';
 
 export interface UserAttributes {
     id: number;
@@ -26,8 +27,8 @@ export interface UserInstance
 type CustomModelCtor<M extends Model> = typeof Model & UserStatics & { new (): M }; // eslint-disable-line
 
 function UserFactory(client: Sequelize) {
-    const users = client.define<UserInstance>(
-        'Users',
+    const user = client.define<UserInstance>(
+        'User',
         {
             id: {
                 allowNull: false,
@@ -47,6 +48,7 @@ function UserFactory(client: Sequelize) {
         },
         {
             timestamps: true,
+            tableName: 'users',
         },
     ) as CustomModelCtor<UserInstance>;
 
@@ -55,7 +57,15 @@ function UserFactory(client: Sequelize) {
     //       users.belongsTo()
     // };
 
-    return users;
+    // Hooks
+    user.addHook('beforeSave', async (user) => {
+        if (user.changed() && (user.changed() as string[]).includes('password')) {
+            const hashed = await Password.toHash(user.getDataValue('password'));
+            user.setDataValue('password', hashed);
+        }
+    });
+
+    return user;
 }
 
 export { UserFactory };
