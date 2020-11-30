@@ -26,7 +26,6 @@ const server = http.createServer(app);
 		console.log('[Node Process] MongoDB is connected...')
 
 		await client.authenticate()
-		await client.sync()
 		console.log('[Node Process] PostgreSQL is connected...')
 	} catch (e) {
 		console.error(e);

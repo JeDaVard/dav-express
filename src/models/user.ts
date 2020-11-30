@@ -9,10 +9,6 @@ export interface UserAttributes {
     updatedAt?: Date;
 }
 
-interface UserStatics {
-    associate(models: { [key: string]: typeof Model }): void;
-}
-
 export interface UserCreationAttributes
     extends Optional<UserAttributes, 'id' | 'createdAt' | 'updatedAt'> {}
 // export interface UserCreationAttributes {
@@ -23,8 +19,6 @@ export interface UserCreationAttributes
 export interface UserInstance
     extends Model<UserAttributes, UserCreationAttributes>,
         UserAttributes {}
-
-type CustomModelCtor<M extends Model> = typeof Model & UserStatics & { new (): M }; // eslint-disable-line
 
 function UserFactory(client: Sequelize) {
     const user = client.define<UserInstance>(
@@ -50,11 +44,11 @@ function UserFactory(client: Sequelize) {
             timestamps: true,
             tableName: 'users',
         },
-    ) as CustomModelCtor<UserInstance>;
+    ) as ModelCtor<UserInstance>;
 
     // Associations
-    // users.associate = (models) => {
-    //       users.belongsTo()
+    // user.associate = (models) => {
+    // users.belongsTo()
     // };
 
     // Hooks
