@@ -1,77 +1,63 @@
-import { Sequelize, Model, DataTypes, Optional, HasManyAddAssociationMixin } from 'sequelize';
+import mongoose from 'mongoose';
 import { Password } from '../libs/passwords';
-import { VideoInstance } from './videos';
 
-export interface UserAttributes {
-    id: number;
+// Interface that describes input properties to create a new User
+interface UserAttrs {
     email: string;
     password: string;
-    createdAt?: Date;
-    updatedAt?: Date;
-    videos?: VideoInstance[] | VideoInstance['id'][];
 }
 
-export interface UserCreationAttributes
-    extends Optional<UserAttributes, 'id' | 'createdAt' | 'updatedAt'> {}
-// export interface UserCreationAttributes {
-//     email: string;
-//     password: string;
-// }
-
-export interface UserInstance
-    extends Model<UserAttributes, UserCreationAttributes>,
-        UserAttributes {
-    getVideos: HasManyAddAssociationMixin<VideoInstance, VideoInstance['id']>;
-    // videos: VideoInstance[];
+// Interface that describes the properties that a User model has, including static methods
+interface UserModel extends mongoose.Model<UserDocument> {
+    build(attrs: UserAttrs): UserDocument;
 }
 
-function UserFactory(client: Sequelize, Sequelize: typeof DataTypes) {
-    const user = client.define<UserInstance>(
-        'User',
-        {
-            id: {
-                allowNull: false,
-                type: Sequelize.INTEGER,
-                primaryKey: true,
-                autoIncrement: true,
-            },
-            email: {
-                allowNull: false,
-                type: Sequelize.STRING(50),
-                unique: true,
-            },
-            password: {
-                allowNull: false,
-                type: Sequelize.STRING,
+// Interface that describes properties that a user document has
+interface UserDocument extends mongoose.Document {
+    email: string;
+    password: string;
+    createdAt: string;
+    updatedAt: string;
+}
+
+const userSchema = new mongoose.Schema(
+    {
+        email: {
+            type: String,
+            required: true,
+            unique: true,
+        },
+        password: {
+            type: String,
+        },
+    },
+    {
+        timestamps: true,
+        toJSON: {
+            transform(_, ret) {
+                ret.id = ret._id;
+                delete ret._id;
+                delete ret.password;
+                delete ret.__v;
             },
         },
-        {
-            timestamps: true,
-            tableName: 'users',
-        },
-    ) as ModelCtor<UserInstance>;
+    },
+);
 
-    // Associations
-    user.associate = ({ Video }) => {
-        user.hasMany(Video, {
-            foreignKey: {
-                name: 'userId',
-                allowNull: false,
-            },
-            as: 'videos',
-            onDelete: 'CASCADE',
-        });
-    };
+userSchema.pre('save', async function (next) {
+    if (this.isModified('password')) {
+        const hashed = await Password.toHash(this.get('password'));
+        this.set('password', hashed);
+    }
+    next();
+});
 
-    // Hooks
-    user.addHook('beforeSave', async (user) => {
-        if (user.changed() && (user.changed() as string[]).includes('password')) {
-            const hashed = await Password.toHash(user.getDataValue('password'));
-            user.setDataValue('password', hashed);
-        }
-    });
+/* eslint-disable */
+userSchema.statics.build = (attrs: UserAttrs) => {
+    return new User(attrs);
+};
 
-    return user;
-}
+const User = mongoose.model<UserDocument, UserModel>('User', userSchema);
+/* eslint-enable */
 
-export { UserFactory };
+export { User };

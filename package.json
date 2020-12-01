@@ -19,10 +19,7 @@
         "test:unit": "jest \\.spec\\.ts?$",
         "test:comp": "jest \\.test\\.ts?$",
         "test:watch": "jest --watch --notify",
-        "test:cover": "node ./tools/test-cover.js",
-        "db:migrate": "./node_modules/.bin/sequelize db:migrate",
-        "db:undo": "./node_modules/.bin/sequelize db:migrate:undo",
-        "db:new": "./node_modules/.bin/sequelize migration:create"
+        "test:cover": "node ./tools/test-cover.js"
     },
     "keywords": [],
     "author": "",
@@ -37,7 +34,6 @@
         "mongoose": "^5.10.15",
         "mongoose-update-if-current": "^1.4.0",
         "pg": "^8.5.1",
-        "sequelize": "^6.3.5",
         "ts-node": "^9.0.0",
         "ts-node-dev": "^1.0.0",
         "typescript": "^4.0.5"
@@ -65,7 +61,6 @@
         "lint-staged": "^10.5.1",
         "node-mocks-http": "^1.9.0",
         "prettier": "^2.2.0",
-        "sequelize-cli": "^6.2.0",
         "supertest": "^5.0.0",
         "ts-jest": "^26.4.4"
     },

@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { User } from 'mongo_models/user';
+import { User } from 'models';
 import { BadRequestError, DatabaseConnectionError } from 'libs/errors';
 import { Password } from 'libs/passwords';
 import jwt from 'jsonwebtoken';
