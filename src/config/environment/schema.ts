@@ -4,6 +4,7 @@ import Joi from 'joi';
 const envSchema = {
     development: Joi.object({
         API_VERSION_URL: Joi.string().required(),
+        API_VERSION_V2_URL: Joi.string().required(),
         MONGO_URI: Joi.string().required(),
         JWT_SECRET: Joi.string().required(),
         PORT: Joi.string().default(5000),
@@ -12,6 +13,7 @@ const envSchema = {
         .required(),
     test: Joi.object({
         API_VERSION_URL: Joi.string().required(),
+        API_VERSION_V2_URL: Joi.string().required(),
         MONGO_URI: Joi.string().required(),
         MONGO_LINK: Joi.string(),
         MONGO_DB_NAME: Joi.string(),
@@ -21,6 +23,7 @@ const envSchema = {
         .required(),
     staging: Joi.object({
         API_VERSION_URL: Joi.string().required(),
+        API_VERSION_V2_URL: Joi.string().required(),
         MONGO_URI: Joi.string().required(),
         JWT_SECRET: Joi.string().required(),
         PORT: Joi.string().required(),
@@ -29,6 +32,7 @@ const envSchema = {
         .required(),
     production: Joi.object({
         API_VERSION_URL: Joi.string().required(),
+        API_VERSION_V2_URL: Joi.string().required(),
         MONGO_URI: Joi.string().required(),
         JWT_SECRET: Joi.string().required(),
         PORT: Joi.string().required(),
