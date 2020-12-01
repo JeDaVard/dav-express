@@ -1,5 +1,6 @@
-import { Sequelize, Model, DataTypes, Optional } from 'sequelize';
+import { Sequelize, Model, DataTypes, Optional, HasManyAddAssociationMixin } from 'sequelize';
 import { Password } from '../libs/passwords';
+import { VideoInstance } from './videos';
 
 export interface UserAttributes {
     id: number;
@@ -7,6 +8,7 @@ export interface UserAttributes {
     password: string;
     createdAt?: Date;
     updatedAt?: Date;
+    videos?: VideoInstance[] | VideoInstance['id'][];
 }
 
 export interface UserCreationAttributes
@@ -18,7 +20,10 @@ export interface UserCreationAttributes
 
 export interface UserInstance
     extends Model<UserAttributes, UserCreationAttributes>,
-        UserAttributes {}
+        UserAttributes {
+    getVideos: HasManyAddAssociationMixin<VideoInstance, VideoInstance['id']>;
+    // videos: VideoInstance[];
+}
 
 function UserFactory(client: Sequelize, Sequelize: typeof DataTypes) {
     const user = client.define<UserInstance>(

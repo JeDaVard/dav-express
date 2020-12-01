@@ -1,5 +1,6 @@
-import { Sequelize, Model, DataTypes } from 'sequelize';
+import { Sequelize, Model, DataTypes, BelongsToCreateAssociationMixin } from 'sequelize';
 import { User } from './index';
+import { UserInstance } from './user';
 
 export interface VideoAttributes {
     id: number;
@@ -9,6 +10,7 @@ export interface VideoAttributes {
     userId: number;
     createdAt?: Date;
     updatedAt?: Date;
+    user?: UserInstance;
 }
 
 // export interface VideoCreationAttributes
@@ -21,7 +23,10 @@ export interface VideoCreationAttributes {
 
 export interface VideoInstance
     extends Model<VideoAttributes, VideoCreationAttributes>,
-        VideoAttributes {}
+        VideoAttributes {
+    getUser: BelongsToCreateAssociationMixin<UserInstance>;
+    // user: UserInstance;
+}
 
 function VideoFactory(client: Sequelize, Sequelize: typeof DataTypes) {
     const video = client.define<VideoInstance>(
