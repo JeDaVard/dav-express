@@ -40,28 +40,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d94c5589-3348-44f4-9dfb-50efa0a4eca3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/utils/injectEnv.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_11_20,_01_18_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_11_20,_01_19_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_11_20,_01_54_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_11_20,_01_55_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_11_20,_01_59_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_11_20,_01_59_[Default_Changelist]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_11_20,_01_59_[Default_Changelist]2/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_11_20__01_18__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_11_20__01_19__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_11_20__01_54__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_11_20__01_55__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_11_20__01_59__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_11_20__01_59__Default_Changelist_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_11_20__01_59__Default_Changelist_2.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/videos.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/@types/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/@types/index.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bin/www" beforeDir="false" afterPath="$PROJECT_DIR$/src/bin/www" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/db/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/db/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/environment/variables.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/environment/variables.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/db/migrations/20201130110217-users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/db/migrations/20201130110217-users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/user.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <list id="f2115c66-1c46-416a-9d03-51b7dd938030" name="badge test" comment="" />
     <list id="ee4925dd-5d78-4280-bd56-6142805d2804" name="cov badge percent" comment="" />
@@ -232,7 +217,7 @@
       <workItem from="1606422557719" duration="27000" />
       <workItem from="1606461869261" duration="10530000" />
       <workItem from="1606507242315" duration="47200000" />
-      <workItem from="1606769176810" duration="992000" />
+      <workItem from="1606769176810" duration="8513000" />
     </task>
     <servers />
   </component>
@@ -358,10 +343,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="539" y="106" key="VcsDiffUtil.ChangesDialog/-1440.0.1440.900/0.0.1440.900@0.0.1440.900" timestamp="1606405510776" />
-    <state x="422" y="189" width="595" height="580" key="find.popup" timestamp="1606466030775">
+    <state x="422" y="189" width="595" height="580" key="find.popup" timestamp="1606808449220">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="422" y="189" width="595" height="580" key="find.popup/-1440.0.1440.900/0.0.1440.900@0.0.1440.900" timestamp="1606466030775" />
+    <state x="422" y="189" width="595" height="580" key="find.popup/-1440.0.1440.900/0.0.1440.900@0.0.1440.900" timestamp="1606808449220" />
     <state x="423" y="187" width="595" height="580" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1606369714129" />
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1606236223520">
       <screen x="0" y="0" width="1440" height="900" />

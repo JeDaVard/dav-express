@@ -18,7 +18,7 @@ declare global {
 }
 
 interface WithAssociate {
-    associate(models: { [key: string]: typeof Model }): void;
+    associate(models: { [key: string]: ModelCtor<Model> }): void;
 }
 
 declare global {

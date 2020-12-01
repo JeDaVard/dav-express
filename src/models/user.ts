@@ -20,24 +20,24 @@ export interface UserInstance
     extends Model<UserAttributes, UserCreationAttributes>,
         UserAttributes {}
 
-function UserFactory(client: Sequelize) {
+function UserFactory(client: Sequelize, Sequelize: typeof DataTypes) {
     const user = client.define<UserInstance>(
         'User',
         {
             id: {
                 allowNull: false,
-                type: DataTypes.INTEGER,
+                type: Sequelize.INTEGER,
                 primaryKey: true,
                 autoIncrement: true,
             },
             email: {
                 allowNull: false,
-                type: DataTypes.STRING(50),
+                type: Sequelize.STRING(50),
                 unique: true,
             },
             password: {
                 allowNull: false,
-                type: DataTypes.STRING(255),
+                type: Sequelize.STRING,
             },
         },
         {
@@ -47,9 +47,16 @@ function UserFactory(client: Sequelize) {
     ) as ModelCtor<UserInstance>;
 
     // Associations
-    // user.associate = (models) => {
-    // users.belongsTo()
-    // };
+    user.associate = ({ Video }) => {
+        user.hasMany(Video, {
+            foreignKey: {
+                name: 'userId',
+                allowNull: false,
+            },
+            as: 'videos',
+            onDelete: 'CASCADE',
+        });
+    };
 
     // Hooks
     user.addHook('beforeSave', async (user) => {
