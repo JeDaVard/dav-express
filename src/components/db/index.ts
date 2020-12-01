@@ -1,9 +1,7 @@
 import mongoose from 'mongoose';
 
-import { env } from 'config/environment';
-
-async function connectMongo() {
-    await mongoose.connect(env.MONGO_URI, {
+async function connectMongo(mongoUri: string) {
+    await mongoose.connect(mongoUri, {
         useNewUrlParser: true,
         useCreateIndex: true,
         useUnifiedTopology: true,

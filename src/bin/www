@@ -17,7 +17,7 @@ const server = http.createServer(app);
 (async function () {
 	try {
 		// Connect to DB
-		await connectMongo()
+		await connectMongo(env.MONGO_URI)
 		console.log('[Node Process] MongoDB is connected...')
 	} catch (e) {
 		console.error(e);
