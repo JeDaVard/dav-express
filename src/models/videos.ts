@@ -4,7 +4,7 @@ import { User } from './index';
 export interface VideoAttributes {
     id: number;
     description: string;
-    video_url: string;
+    videoUrl: string;
     tags: string;
     userId: number;
     createdAt?: Date;
@@ -15,7 +15,7 @@ export interface VideoAttributes {
 //   extends Optional<VideoAttributes, 'id' | 'createdAt' | 'updatedAt'> {}
 export interface VideoCreationAttributes {
     description: string;
-    video_url: string;
+    videoUrl: string;
     userId: string;
 }
 
@@ -37,7 +37,7 @@ function VideoFactory(client: Sequelize, Sequelize: typeof DataTypes) {
                 allowNull: false,
                 type: Sequelize.STRING,
             },
-            video_url: {
+            videoUrl: {
                 allowNull: false,
                 type: Sequelize.STRING(1000),
             },

@@ -13,7 +13,7 @@ module.exports = {
                 allowNull: false,
                 type: Sequelize.STRING,
             },
-            video_url: {
+            videoUrl: {
                 allowNull: false,
                 type: Sequelize.STRING(1000),
             },
