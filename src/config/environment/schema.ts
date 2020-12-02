@@ -8,6 +8,7 @@ const envSchema = {
         MONGO_URI: Joi.string().required(),
         JWT_SECRET: Joi.string().required(),
         PORT: Joi.string().default(5000),
+        NODE_LOGGING_LEVEL: Joi.string().default('debug'),
     })
         .unknown()
         .required(),
@@ -18,6 +19,7 @@ const envSchema = {
         MONGO_LINK: Joi.string(),
         MONGO_DB_NAME: Joi.string(),
         JWT_SECRET: Joi.string().required(),
+        NODE_LOGGING_LEVEL: Joi.string().default('debug'),
     })
         .unknown()
         .required(),
@@ -27,6 +29,7 @@ const envSchema = {
         MONGO_URI: Joi.string().required(),
         JWT_SECRET: Joi.string().required(),
         PORT: Joi.string().required(),
+        NODE_LOGGING_LEVEL: Joi.string().default('debug'),
     })
         .unknown()
         .required(),
@@ -36,6 +39,7 @@ const envSchema = {
         MONGO_URI: Joi.string().required(),
         JWT_SECRET: Joi.string().required(),
         PORT: Joi.string().required(),
+        NODE_LOGGING_LEVEL: Joi.string().default('debug'),
     })
         .unknown()
         .required(),
